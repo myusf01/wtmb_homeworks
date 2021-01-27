@@ -111,10 +111,6 @@ user = class {
         return is_in
 
     }
-
-
-
-
 }
 
 like = class {
@@ -140,10 +136,6 @@ const findTweet = (user, id) => {
     });
     return sonuc;
 }
-
-
-
-
 
 yusuf = new user("Yusuf")
 veli = new user("Veli")

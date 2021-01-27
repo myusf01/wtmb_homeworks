@@ -7,12 +7,12 @@ const add = (num1, num2) => num1 + num2
 
 // var? => const ve let çıkmadan önce kullanılırdı.
 
-const toplam = add(2,56)
+const toplam = add(2, 56)
 
 // console.log(sum(1,5))
 
 const mult = (num1, num2) => num1 * num2
 
-const carp = mult(toplam,2)
+const carp = mult(toplam, 2)
 
 console.log(carp)

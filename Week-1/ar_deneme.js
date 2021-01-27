@@ -1,18 +1,18 @@
 shelf = class {
-    constructor(){
+    constructor() {
         this.books = []
     }
 
-    add_book(book){
+    add_book(book) {
         this.books.push(book)
     }
 
-    shelfInfo(){
+    shelfInfo() {
         this.books.forEach(printBook)
     }
 
-    removeBook(bookName){
-        
+    removeBook(bookName) {
+
         // bookIndex indexi atadığımız yeni var
         // this.books.findIndex() => shelf sınıfında bulunan books listesinden index bulma fonksiyonu
         //              1               2                       2
@@ -36,7 +36,7 @@ printBook = book => console.log(book.name)
 
 
 book = class {
-    constructor(name, writer, page, category){
+    constructor(name, writer, page, category) {
 
         this.name = name
         this.writer = writer
@@ -52,10 +52,10 @@ first_shelf = new shelf()
 sec_shelf = new shelf()
 
 clean_code = new book("Clean Code", "Robert C. Martin", 300, "Computer Science")
-alamut = new book("Alamut","Vladimir Bartol", 400, "Novel")
-sn_garip = new book("Sünnet Neden Garip","Nurettin Yıldız", 148,"Islamic")
+alamut = new book("Alamut", "Vladimir Bartol", 400, "Novel")
+sn_garip = new book("Sünnet Neden Garip", "Nurettin Yıldız", 148, "Islamic")
 haclı = new book("Müslümanların Gözüyle Haçlı Seferleri", "Paul M. Cobb", 450, "History")
-rahmet = new book("Rahmet Yağmurları","el-Cevziyye",350,"Islamic")
+rahmet = new book("Rahmet Yağmurları", "el-Cevziyye", 350, "Islamic")
 
 first_shelf.add_book(rahmet)
 first_shelf.add_book(haclı)
