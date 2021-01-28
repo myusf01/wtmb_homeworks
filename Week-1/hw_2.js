@@ -66,12 +66,30 @@ user = class {
 
 
 
-    like_tweet(accountAuthor, id) {
-        let likedTweet = findTweet(accountAuthor, id);
-        console.log(likedTweet)
-        let newLike = new like(this.username, likedTweet);
-        accountAuthor.userLikes.push(newLike)
+    likeTweet(accountAuthor, id) {
+        let likingTweet = findTweet(accountAuthor, id);
+        // console.log(likingTweet)
+        let newLike = new like(this.username, likingTweet);
+        likingTweet.likes.push(this)
+        this.userLikes.push(newLike)
         // return newLike
+    }
+
+    dislike(accountAuthor, id){
+        let likedTweet = findTweet(accountAuthor,id)
+        let userLikeIndex = this.userLikes.findIndex((like) => like.tweet.tweetID == id);
+        let tweetLikeIndex = this.getLikeIndex(accountAuthor)
+
+      
+        if (this.isUserLike(this, id)) {
+            this.userLikes.splice(userLikeIndex, 1)
+            likedTweet.likes.splice(tweetLikeIndex,1)
+        } else {
+            console.log("This post is not liked.")
+        }
+
+        
+
     }
 
     follow(name) {
@@ -98,17 +116,62 @@ user = class {
         }
     }
 
-    isFollowing(name) {
-        let is_in = false
-        this.followings.forEach(following => {
-            if (name.username == following.username) {
-                is_in = true
+    getLikeIndex(accountAuthor){
+        let authorLikeIndex;
+
+        accountAuthor.tweets.forEach(tweet => {
+            if ((this.isUserLike(this,tweet.tweetID) & this.isTweetLiked(accountAuthor, this))) 
+            {
+                authorLikeIndex = tweet.likes.findIndex((like) => like == this)
             } else {
-                is_in = false
+                authorLikeIndex = null;
             }
         });
 
-        return is_in
+        return authorLikeIndex
+    }
+
+    isTweetLiked(tweetAuthor,likedUser){
+        let isLikedUser = null
+
+        tweetAuthor.tweets.forEach(tweet => {
+            tweet.likes.forEach(user => {
+                if (user == likedUser) {
+                    return isLikedUser = likedUser
+                    
+                } else {
+                    return isLikedUser = null
+
+                }
+            });
+        });
+        return isLikedUser
+    }
+
+    isUserLike(user,id){
+        let isLike = false
+        user.userLikes.forEach(like => {
+            if (like.tweet.tweetID == id) {
+                isLike= true
+            } else {
+                isLike = false
+            }
+        });
+
+        return isLike
+    }
+
+    isFollowing(name) {
+        let isFollow = false
+        this.followings.forEach(following => {
+            if (name.username == following.username) {
+                isFollow = true
+            } else {
+                isFollow = false
+            }
+        });
+
+        return isFollow
 
     }
 }
@@ -142,7 +205,10 @@ veli = new user("Veli")
 // yusuf.createTweet("Im so tired laaa")
 yusuf.createTweet("Im not tired", 321)
 veli.createTweet("Im fineeee", 123)
-yusuf.like_tweet(veli, 123)
+
+yusuf.likeTweet(veli, 123)
+yusuf.dislike(veli,123)
+
 yusuf.follow(veli)
 yusuf.unfollow(veli)
 
