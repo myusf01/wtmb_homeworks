@@ -75,20 +75,20 @@ user = class {
         // return newLike
     }
 
-    dislike(accountAuthor, id){
-        let likedTweet = findTweet(accountAuthor,id)
+    dislike(accountAuthor, id) {
+        let likedTweet = findTweet(accountAuthor, id)
         let userLikeIndex = this.userLikes.findIndex((like) => like.tweet.tweetID == id);
         let tweetLikeIndex = this.getLikeIndex(accountAuthor)
 
-      
+
         if (this.isUserLike(this, id)) {
             this.userLikes.splice(userLikeIndex, 1)
-            likedTweet.likes.splice(tweetLikeIndex,1)
+            likedTweet.likes.splice(tweetLikeIndex, 1)
         } else {
             console.log("This post is not liked.")
         }
 
-        
+
 
     }
 
@@ -116,12 +116,11 @@ user = class {
         }
     }
 
-    getLikeIndex(accountAuthor){
+    getLikeIndex(accountAuthor) {
         let authorLikeIndex;
 
         accountAuthor.tweets.forEach(tweet => {
-            if ((this.isUserLike(this,tweet.tweetID) & this.isTweetLiked(accountAuthor, this))) 
-            {
+            if ((this.isUserLike(this, tweet.tweetID) & this.isTweetLiked(accountAuthor, this))) {
                 authorLikeIndex = tweet.likes.findIndex((like) => like == this)
             } else {
                 authorLikeIndex = null;
@@ -131,14 +130,14 @@ user = class {
         return authorLikeIndex
     }
 
-    isTweetLiked(tweetAuthor,likedUser){
+    isTweetLiked(tweetAuthor, likedUser) {
         let isLikedUser = null
 
         tweetAuthor.tweets.forEach(tweet => {
             tweet.likes.forEach(user => {
                 if (user == likedUser) {
                     return isLikedUser = likedUser
-                    
+
                 } else {
                     return isLikedUser = null
 
@@ -148,11 +147,11 @@ user = class {
         return isLikedUser
     }
 
-    isUserLike(user,id){
+    isUserLike(user, id) {
         let isLike = false
         user.userLikes.forEach(like => {
             if (like.tweet.tweetID == id) {
-                isLike= true
+                isLike = true
             } else {
                 isLike = false
             }
@@ -207,7 +206,7 @@ yusuf.createTweet("Im not tired", 321)
 veli.createTweet("Im fineeee", 123)
 
 yusuf.likeTweet(veli, 123)
-yusuf.dislike(veli,123)
+yusuf.dislike(veli, 123)
 
 yusuf.follow(veli)
 yusuf.unfollow(veli)
