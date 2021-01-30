@@ -17,10 +17,8 @@ yusuf.attend(wtmb)
 velid.attend(wtmb)
 
 
-Database.save("meetup.json",wtmb)
+Database.save("meetup.json", wtmb)
 
 // const mitup = Database.load("meetup.json")
 
 // console.log(mitup.name)
-
-
