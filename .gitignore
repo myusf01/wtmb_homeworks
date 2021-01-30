@@ -1,2 +1,2 @@
-/.vscode
-/index.js
+*.vscode
+*node_modules

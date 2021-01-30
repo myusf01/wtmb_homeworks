@@ -14,11 +14,10 @@
 
 // TODO
 
-// 1. Add dislike.
 
 
 
-tweet = class {
+class tweet {
 
     constructor(text, user, tweetID) {
         this.text = text
@@ -44,11 +43,9 @@ tweet = class {
 
         return id
     }
-
-
 }
 
-user = class {
+class user {
 
     constructor(username) {
         this.username = username
@@ -175,7 +172,7 @@ user = class {
     }
 }
 
-like = class {
+class like {
     constructor(user, tweet) {
         this.user = user
         this.tweet = tweet
