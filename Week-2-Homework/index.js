@@ -15,7 +15,8 @@
 // TODO
 const Tweet = require('./tweet')
 const User = require('./user')
-
+const Database = require('./database')
+users = []
 
 yusuf = new User("Yusuf")
 veli = new User("Veli")
@@ -25,10 +26,20 @@ veli = new User("Veli")
 yusuf.createTweet("Im not tired", 321)
 veli.createTweet("Im fineeee", 123)
 
+users.push(yusuf,veli)
+
 yusuf.likeTweet(veli, 123)
 yusuf.dislike(veli, 123)
 
-yusuf.follow(veli)
-yusuf.unfollow(veli)
+// yusuf.follow(veli)
+// // yusuf.unfollow(veli)
 
-console.log(yusuf)
+// users.forEach(user => {
+//     // console.log(user)
+//     Database.save(user.username + ".json", user)
+// });
+
+// load_yusuf = Database.load("Yusuf.json")
+// // Database.save()
+
+// console.log(load_yusuf.username)

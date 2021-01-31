@@ -2,7 +2,7 @@ const tweet = require("./tweet")
 const like = require('./like')
 
 
-class user {
+module.exports = class user {
 
     constructor(username) {
         this.username = username
@@ -23,19 +23,20 @@ class user {
     likeTweet(accountAuthor, id) {
         let likingTweet = findTweet(accountAuthor, id);
         // console.log(likingTweet)
-        let newLike = new like(this.username, likingTweet);
-        likingTweet.likes.push(this)
+        let newLike = new like(accountAuthor.username, likingTweet);
+        likingTweet.likes.push(this.username)
         this.userLikes.push(newLike)
         // return newLike
     }
 
     dislike(accountAuthor, id) {
         let likedTweet = findTweet(accountAuthor, id)
-        let userLikeIndex = this.userLikes.findIndex((like) => like.tweet.tweetID == id);
+
+        let userLikeIndex = this.userLikes.findIndex((like) => like.tweet == likedTweet.text);
         let tweetLikeIndex = this.getLikeIndex(accountAuthor)
 
 
-        if (this.isUserLike(this, id)) {
+        if (this.isUserLike(this, likedTweet.text)) {
             this.userLikes.splice(userLikeIndex, 1)
             likedTweet.likes.splice(tweetLikeIndex, 1)
         } else {
@@ -50,8 +51,8 @@ class user {
         if (this.isFollowing(name)) {
             console.log("You're already following this user.")
         } else {
-            this.followings.push(name)
-            name.followers.push(this)
+            this.followings.push(name.username)
+            name.followers.push(this.username)
         }
 
 
@@ -74,8 +75,10 @@ class user {
         let authorLikeIndex;
 
         accountAuthor.tweets.forEach(tweet => {
-            if ((this.isUserLike(this, tweet.tweetID) & this.isTweetLiked(accountAuthor, this))) {
-                authorLikeIndex = tweet.likes.findIndex((like) => like == this)
+
+            if ((this.isUserLike(this, tweet.text) && this.isTweetLiked(accountAuthor, this))) 
+            {
+                authorLikeIndex = tweet.likes.findIndex((like) => like == this.username)
             } else {
                 authorLikeIndex = null;
             }
@@ -89,8 +92,8 @@ class user {
 
         tweetAuthor.tweets.forEach(tweet => {
             tweet.likes.forEach(user => {
-                if (user == likedUser) {
-                    return isLikedUser = likedUser
+                if (user == likedUser.username) {
+                    return isLikedUser = likedUser.username
 
                 } else {
                     return isLikedUser = null
@@ -104,7 +107,7 @@ class user {
     isUserLike(user, id) {
         let isLike = false
         user.userLikes.forEach(like => {
-            if (like.tweet.tweetID == id) {
+            if (like.tweet == id) {
                 isLike = true
             } else {
                 isLike = false
@@ -146,4 +149,4 @@ const findTweet = (user, id) => {
 }
 
 
-module.exports = {tweet,findTweet}
+// module.exports = {user}

@@ -1,0 +1,13 @@
+{
+    "username": "Veli",
+    "userLikes": [],
+    "tweets": [{
+        "text": "Im fineeee",
+        "user": "Veli",
+        "likes": [],
+        "lenLikes": 0,
+        "tweetID": 123
+    }],
+    "followers": [],
+    "followings": []
+}

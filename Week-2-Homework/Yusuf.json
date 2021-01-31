@@ -1,0 +1,16 @@
+{
+    "username": "Yusuf",
+    "userLikes": [{
+        "user": "Yusuf",
+        "tweet": "Im fineeee"
+    }],
+    "tweets": [{
+        "text": "Im not tired",
+        "user": "Yusuf",
+        "likes": [],
+        "lenLikes": 0,
+        "tweetID": 321
+    }],
+    "followers": [],
+    "followings": ["Veli"]
+}

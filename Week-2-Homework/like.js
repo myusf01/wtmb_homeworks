@@ -1,7 +1,7 @@
 class like {
     constructor(user, tweet) {
         this.user = user
-        this.tweet = tweet
+        this.tweet = tweet.text
     }
 
 

@@ -1,4 +1,5 @@
 const fs = require('fs')
+const Flatted = require('flatted')
 
 const save = function (filename, data) {
     fs.writeFileSync(filename, JSON.stringify(data))
