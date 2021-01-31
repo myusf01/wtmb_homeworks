@@ -1,16 +1,1 @@
-{
-    "username": "Yusuf",
-    "userLikes": [{
-        "user": "Yusuf",
-        "tweet": "Im fineeee"
-    }],
-    "tweets": [{
-        "text": "Im not tired",
-        "user": "Yusuf",
-        "likes": [],
-        "lenLikes": 0,
-        "tweetID": 321
-    }],
-    "followers": [],
-    "followings": ["Veli"]
-}
+{"username":"Yusuf","userLikes":[],"tweets":[{"text":"Im so tired laaa","user":"Yusuf","likes":[],"lenLikes":0,"tweetID":"486162"},{"text":"Im not tired","user":"Yusuf","likes":[],"lenLikes":0,"tweetID":"569052"}],"followers":[],"followings":[]}

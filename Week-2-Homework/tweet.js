@@ -1,15 +1,15 @@
 class tweet {
 
-    constructor(text, user, tweetID) {
+    constructor(text, user) {
         this.text = text
         this.user = user
         this.likes = []
         this.lenLikes = this.likes.length
-        this.tweetID = tweetID
-        // this.tweetID = this.createID(this.text)
+        // this.tweetID = tweetID
+        this.tweetID = this.createID()
     }
 
-    createID(text) {
+    createID() {
         var id = ""
         var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 

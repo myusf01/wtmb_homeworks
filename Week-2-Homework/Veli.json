@@ -4,10 +4,10 @@
     "tweets": [{
         "text": "Im fineeee",
         "user": "Veli",
-        "likes": ["Yusuf"],
+        "likes": [],
         "lenLikes": 0,
-        "tweetID": 123
+        "tweetID": "646816"
     }],
-    "followers": ["Yusuf"],
+    "followers": [],
     "followings": []
 }
