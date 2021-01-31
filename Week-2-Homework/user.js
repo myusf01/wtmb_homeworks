@@ -60,8 +60,8 @@ module.exports = class user {
     unfollow(name) {
         // TODO:
         // Find another and better way to find follower/following index.
-        let followerIndex = this.followings.findIndex((sen) => sen.username.toLowerCase() == name.username.toLowerCase())
-        let followingIndex = name.followers.findIndex((ben) => ben.username.toLowerCase() == this.username.toLowerCase())
+        let followerIndex = this.followings.findIndex((sen) => sen.toLowerCase() == name.username.toLowerCase())
+        let followingIndex = name.followers.findIndex((ben) => ben.toLowerCase() == this.username.toLowerCase())
 
         if (this.isFollowing(name)) {
             this.followings.splice(followerIndex, 1)
@@ -120,7 +120,7 @@ module.exports = class user {
     isFollowing(name) {
         let isFollow = false
         this.followings.forEach(following => {
-            if (name.username == following.username) {
+            if (name.username == following) {
                 isFollow = true
             } else {
                 isFollow = false

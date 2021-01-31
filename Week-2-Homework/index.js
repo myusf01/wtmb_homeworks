@@ -31,8 +31,8 @@ users.push(yusuf,veli)
 yusuf.likeTweet(veli, 123)
 yusuf.dislike(veli, 123)
 
-// yusuf.follow(veli)
-// // yusuf.unfollow(veli)
+yusuf.follow(veli)
+yusuf.unfollow(veli)
 
 // users.forEach(user => {
 //     // console.log(user)
