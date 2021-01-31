@@ -1,49 +1,6 @@
-// Classes
+const tweet = require("./tweet")
+const like = require('./like')
 
-//     Tweet
-//     User
-//     Like
-
-// Interactions
-
-//     a User has many Tweets and can create new Tweets
-//     a User can like a Tweet by creating a Like
-//     each Like has one User and one Tweet
-//     a Tweet can have many Likes
-//     a User can have many Likes
-
-// TODO
-
-
-
-
-class tweet {
-
-    constructor(text, user, tweetID) {
-        this.text = text
-        this.user = user
-        this.likes = []
-        this.lenLikes = this.likes.length
-        this.tweetID = tweetID
-        // this.tweetID = this.createID(this.text)
-    }
-
-    createID(text) {
-        var id = ""
-        var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-
-        for (var i = 0; i < 3; i++) {
-
-            // random chars 
-            // id += char_list.charAt(Math.floor(Math.random() * text.length)) + Math.floor((Math.random()*10)+1)
-
-            // random numbers
-            id += Math.floor((Math.random() * 100) + 1)
-        }
-
-        return id
-    }
-}
 
 class user {
 
@@ -172,14 +129,6 @@ class user {
     }
 }
 
-class like {
-    constructor(user, tweet) {
-        this.user = user
-        this.tweet = tweet
-    }
-
-
-}
 
 const findTweet = (user, id) => {
     user.tweets.forEach(tweet => {
@@ -196,16 +145,5 @@ const findTweet = (user, id) => {
     return sonuc;
 }
 
-yusuf = new user("Yusuf")
-veli = new user("Veli")
-// yusuf.createTweet("Im so tired laaa")
-yusuf.createTweet("Im not tired", 321)
-veli.createTweet("Im fineeee", 123)
 
-yusuf.likeTweet(veli, 123)
-yusuf.dislike(veli, 123)
-
-yusuf.follow(veli)
-yusuf.unfollow(veli)
-
-console.log(yusuf)
+module.exports = {tweet,findTweet}
