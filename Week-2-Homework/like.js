@@ -18,8 +18,9 @@ function likeTweet(user,accountAuthor, id) {
 function dislike(user,accountAuthor, id) {
     let likedTweet = findTweet(accountAuthor, id)
 
-    let userLikeIndex = user.userLikes.findIndex((like) => like.tweet == likedTweet.text);
-    let tweetLikeIndex = getLikeIndex(accountAuthor)
+    // let userLikeIndex = Lodash.indexOf(likedBy.userLikes.forEach(like => {return like.tweet}),likedTweet.text)
+    let userLikeIndex = likedBy.userLikes.findIndex((like) => like.tweet == likedTweet.text);
+    let tweetLikeIndex = getLikeIndex(liked)
 
 
     if (isUserLike(user, likedTweet.text)) {
