@@ -1,3 +1,4 @@
+const Lodash = require('lodash')
 class like {
     constructor(user, tweet) {
         this.user = user
@@ -15,34 +16,30 @@ function likeTweet(user,accountAuthor, id) {
     // return newLike
 }
 
-function dislike(user,accountAuthor, id) {
-    let likedTweet = findTweet(accountAuthor, id)
+function dislike(likedBy,liked, tweet_id) {
+    let likedTweet = findTweet(liked, tweet_id)
 
-    // let userLikeIndex = Lodash.indexOf(likedBy.userLikes.forEach(like => {return like.tweet}),likedTweet.text)
+    // let userLikeIndex = Lodash.indexOf(likedBy.userLikes.forEach(like => {if (like.tweet==likedTweet.text) like.tweet}),likedTweet.text)
     let userLikeIndex = likedBy.userLikes.findIndex((like) => like.tweet == likedTweet.text);
-    let tweetLikeIndex = getLikeIndex(liked)
+    let tweetLikeIndex = getLikeIndex(likedBy,liked)
 
 
-    if (isUserLike(user, likedTweet.text)) {
-        user.userLikes.splice(userLikeIndex, 1)
+    if (isUserLike(likedBy, likedTweet.text)) {
+        likedBy.userLikes.splice(userLikeIndex, 1)
         likedTweet.likes.splice(tweetLikeIndex, 1)
     } else {
         console.log("This post is not liked.")
     }
-
-
-
 }
 
 
 
-function getLikeIndex(user,accountAuthor) {
+function getLikeIndex(likedBy,tweetedUser) {
     let authorLikeIndex;
+    tweetedUser.tweets.forEach(tweet => {
 
-    accountAuthor.tweets.forEach(tweet => {
-
-        if ((isUserLike(user, tweet.text) && isTweetLiked(accountAuthor, user))) {
-            authorLikeIndex = tweet.likes.findIndex((like) => like == user.username)
+        if ((isUserLike(likedBy, tweet.text) && isTweetLiked(tweetedUser, likedBy))) {
+            authorLikeIndex = tweet.likes.findIndex((like) => like == likedBy.username)
         } else {
             authorLikeIndex = null;
         }

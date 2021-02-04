@@ -1,31 +1,36 @@
-function follow(user,name) {
-    if (isFollowing(user,name)) {
-        console.log("You're already following this user.")
+const Lodash = require('lodash')
+
+function follow(follower,following) {
+    if (isFollowing(follower,following)) {
+        console.log("You're already following this follower.")
     } else {
-        user.followings.push(name.username)
-        name.followers.push(user.username)
+        follower.followings.push(following.username)
+        following.followers.push(follower.username)
     }
 
 
 }
-function unfollow(user,name) {
+function unfollow(follower,following) {
     // TODO:
     // Find another and better way to find follower/following index.
-    let followerIndex = user.followings.findIndex((sen) => sen.toLowerCase() == name.username.toLowerCase())
-    let followingIndex = name.followers.findIndex((ben) => ben.toLowerCase() == user.username.toLowerCase())
+    // Found loadsh library to find index.
+    let followerIndex = Lodash.indexOf(follower.followings,following.username)
+    // let followerIndex = follower.followings.findIndex((sen) => sen.toLowerCase() == following.username.toLowerCase())
+    let followingIndex = Lodash.indexOf(following.followers,follower.username)
+    // let followingIndex = following.followers.findIndex((ben) => ben.toLowerCase() == follower.username.toLowerCase())
 
-    if (isFollowing(user,name)) {
-        user.followings.splice(followerIndex, 1)
-        name.followers.splice(followingIndex, 1)
+    if (isFollowing(follower,following)) {
+        follower.followings.splice(followerIndex, 1)
+        following.followers.splice(followingIndex, 1)
     } else {
         console.log("You're not following this user.")
     }
 }
 
-function isFollowing(user,name) {
+function isFollowing(follower,follow) {
     let isFollow = false
-    user.followings.forEach(following => {
-        if (name.username == following) {
+    follower.followings.forEach(following => {
+        if (follow.username == following) {
             isFollow = true
         } else {
             isFollow = false

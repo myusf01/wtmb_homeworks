@@ -9,6 +9,7 @@
   "author": "Muhammed Yusuf",
   "license": "ISC",
   "dependencies": {
-    "flatted": "^3.1.1"
+    "flatted": "^3.1.1",
+    "lodash": "^4.17.20"
   }
 }
