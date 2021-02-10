@@ -8,3 +8,7 @@ module.exports = class meetup {
     this.attendees.forEach(printName)
   }
 }
+
+printName = function (person) {
+  return console.log(person.name)
+}
