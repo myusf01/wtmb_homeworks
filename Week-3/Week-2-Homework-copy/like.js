@@ -102,5 +102,6 @@ const findTweet = (user, id) => {
 module.exports = {
     like,
     likeTweet,
-    dislike
+    dislike,
+    findTweet
 }
