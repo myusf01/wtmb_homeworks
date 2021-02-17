@@ -1,15 +1,3 @@
-const Lodash = require('lodash')
-class like {
-    constructor(user, tweet) {
-        this.user = user
-        this.tweet = tweet.text
-    }
-}
-
-
-
-
-
 function likeTweet(user,accountAuthor, id) {
     let likingTweet = findTweet(accountAuthor, id);
     // console.log(likingTweet)
@@ -81,27 +69,9 @@ function isUserLike(user, id) {
     return isLike
 }
 
-const findTweet = (user, id) => {
-    user.tweets.forEach(tweet => {
-        if (tweet.tweetID == id) {
-
-            sonuc = tweet
-
-        } else {
-
-            sonuc = console.log("Tweet bulunamadı.")
-        }
-
-    });
-    return sonuc;
-}
-
-
 
 
 module.exports = {
-    like,
     likeTweet,
     dislike,
-    findTweet
 }

@@ -10,15 +10,28 @@
 const Database = require('./database')
 const Follow = require('./follow')
 const Like = require('./like')
-const User = require('./user')
+const User = require('./user') 
+
+
 
 Database.load('./Week-3/Week-2-Homework-copy/Yusuf.json', (err,loadedYusuf) => {
-    console.log("Hello "+ loadedYusuf.username ,loadedYusuf)
+    // console.log("Hello "+ loadedYusuf.username ,loadedYusuf)
+    if (err){
+        console.log("An error occured", err)
+    }
+
+    const yusuf = User.createUser(loadedYusuf)
+    
+
+    // console.log(yusuf.tweets)
+    
+
 })
 
 
 
-const yusuf = User.createUser({username : 'yusuf'})
+
+// const yusuf = User.createUser({username : 'yusuf'})
 
 
 //  loadUser1 = Database.load('./Yusuf.json')

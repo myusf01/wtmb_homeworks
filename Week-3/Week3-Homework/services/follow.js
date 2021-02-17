@@ -1,4 +1,4 @@
-const Lodash = require('lodash')
+const lodash = require('lodash')
 
 function follow(follower,following) {
     if (isFollowing(follower,following)) {
@@ -14,9 +14,9 @@ function unfollow(follower,following) {
     // TODO:
     // Find another and better way to find follower/following index.
     // Found loadsh library to find index.
-    let followerIndex = Lodash.indexOf(follower.followings,following.username)
+    let followerIndex = lodash.indexOf(follower.followings,following.username)
     // let followerIndex = follower.followings.findIndex((sen) => sen.toLowerCase() == following.username.toLowerCase())
-    let followingIndex = Lodash.indexOf(following.followers,follower.username)
+    let followingIndex = lodash.indexOf(following.followers,follower.username)
     // let followingIndex = following.followers.findIndex((ben) => ben.toLowerCase() == follower.username.toLowerCase())
 
     if (isFollowing(follower,following)) {
