@@ -47,8 +47,6 @@ module.exports = class Service {
     async findItem(id) {
 
         const allItems = await this.findAll()
-        console.log(allItems)
-
         return allItems.find(p => p.id == id)
     }
 
@@ -61,6 +59,16 @@ module.exports = class Service {
         return item
     }
 
+    // Implement del function to our code
+    // async  del(itemId) {
+    //     const allItems = await this.findAll()
+    //     const itemIndex = allItems.findIndex(p => p.id == itemId)
+    //     if (itemIndex < 0) return
+    
+    //     allItems.splice(itemIndex, 1)
+    
+    //     await this.saveAll(allItems)
+    //   }
 
     async saveAll(items) {
         return new Promise((resolve, reject) => {

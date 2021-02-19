@@ -23,6 +23,7 @@ async function main() {
   people[0].attend(wtmb)
 
   await MeetupService.add(wtmb)
+  console.log(people[0].name)
 
   await PersonService.del(1)
 

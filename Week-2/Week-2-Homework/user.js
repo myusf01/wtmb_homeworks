@@ -17,9 +17,6 @@ module.exports = class user {
         console.log(this.tweets)
     }
 
-    static create(){
-         
-    }
 }
 
 

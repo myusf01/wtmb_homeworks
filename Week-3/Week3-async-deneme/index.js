@@ -1,6 +1,6 @@
 // TODO
 // 1.) Look for how to update user and tweet databae
-//      after tweet liked.
+//      after tweet liked or tweeted.
 
 
 const User = require('./models/user')
@@ -24,10 +24,10 @@ async function main() {
     // await people[1].createTweet("async ol artık!")  
     const tweets = await TweetService.findAll()
     
-    people[0].likeTweet('951359')
+    people[0].likeTweet('88589')
 
     const likes = await LikeService.findAll()
-    console.log(likes);
+    // console.log(likes);
     console.log(tweets);
 
 }
