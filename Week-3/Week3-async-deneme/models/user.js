@@ -8,9 +8,9 @@ const like = require("./like")
 
 module.exports = class user {
 
-    constructor(username = '', userLikes = [], tweets = [], followers = [], followings = [], id = null) {
+    constructor(username = '', userLikes = [], tweets = [], followers = [], followings = [], id = TweetService.createID()) {
         this.username = username
-        this.id = TweetService.createID()
+        this.id = id
         this.userLikes = userLikes
         this.tweets = tweets
         this.followers = followers
@@ -45,14 +45,16 @@ module.exports = class user {
         userLikes,
         tweets,
         followers,
-        followings
+        followings,
+        id
     }) {
         return new user(
             username,
             userLikes,
             tweets,
             followers,
-            followings
+            followings,
+            id
         )
 
 

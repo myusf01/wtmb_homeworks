@@ -60,15 +60,15 @@ module.exports = class Service {
     }
 
     // Implement del function to our code
-    // async  del(itemId) {
-    //     const allItems = await this.findAll()
-    //     const itemIndex = allItems.findIndex(p => p.id == itemId)
-    //     if (itemIndex < 0) return
+    async  del(itemId) {
+        const allItems = await this.findAll()
+        const itemIndex = allItems.findIndex(p => p.id == itemId)
+        if (itemIndex < 0) return
     
-    //     allItems.splice(itemIndex, 1)
+        allItems.splice(itemIndex, 1)
     
-    //     await this.saveAll(allItems)
-    //   }
+        await this.saveAll(allItems)
+      }
 
     async saveAll(items) {
         return new Promise((resolve, reject) => {
