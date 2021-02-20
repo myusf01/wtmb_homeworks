@@ -2,6 +2,7 @@ const fs = require('fs')
 const Flatted = require('Flatted')
 const { resolve } = require('path')
 
+
 module.exports = class Service {
     constructor(model, dbPath) {
         this.model = model
@@ -53,7 +54,7 @@ module.exports = class Service {
     async add(item) {
         const allItems = await this.findAll()
         // item.id = this.createID()
-        
+
         allItems.push(item)
         await this.saveAll(allItems)
         return item
@@ -77,5 +78,19 @@ module.exports = class Service {
                 resolve()
             })
         })
+    }
+    async indexFind(itemID){
+        const allItems = await this.findAll()
+        
+        return allItems.findIndex(p => p.id == itemID)
+    }
+    async updateService(itemID,obj){
+        const allItems = await this.findAll()
+        allItems.forEach(async item => {
+            if (item.id == itemID){
+                await this.del(itemID)
+                await this.add(obj)
+            }
+        });
     }
 }

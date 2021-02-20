@@ -22,8 +22,8 @@ async function main() {
     // await people[0].createTweet("Deneme")
     // await people[1].createTweet("async ol artık!")  
     const tweets = await TweetService.findAll()
-    // await UserService.del('668753')
-    // people[0].likeTweet('88589')
+    // await UserService.del('634876')
+    people[0].likeTweet('407782')
 
     const likes = await LikeService.findAll()
     // console.log(likes);

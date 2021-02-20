@@ -1,9 +1,9 @@
 module.exports = class tweet {
 
-    constructor(text, user, id = null) {
+    constructor(text, user, id = null, likes = []) {
         this.text = text
         this.user = user
-        this.likes = []
+        this.likes = likes
         this.lenLikes = this.likes.length
         this.id = id
     }
@@ -12,9 +12,10 @@ module.exports = class tweet {
     static create({
         text,
         user,
-        id
+        id,
+        likes
     }) {
-        return new tweet(text, user, id)
+        return new tweet(text, user, id, likes)
     }
 
 }
