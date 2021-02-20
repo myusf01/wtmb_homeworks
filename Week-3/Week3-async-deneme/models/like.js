@@ -1,19 +1,12 @@
-const likeService = require("../services/like-service")
+const TweetService = require("../services/tweet-service")
 
 module.exports = class like {
-    constructor(user,tweet,id=this.likeID()){
+    constructor(user,tweet,id= TweetService.createID()){
         this.user = user
         this.tweet = tweet
         this.id = id
     }
 
-    async likeID() {
-        const allItems = await likeService.findAll()
-
-        const lastItem = allItems[allItems.length - 1]
-        const lastItemsId = lastItem && lastItem.id || 0
-        return lastItemsId + 1
-    }
     static create({user,tweet,id}){
 
         return new like(user,tweet,id)

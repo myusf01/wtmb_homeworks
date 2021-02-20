@@ -45,6 +45,14 @@ module.exports = class Service {
         return id
     }
 
+    async basicID(){
+        const allItems = await LikeService.findAll()
+
+        const lastItem = allItems[allItems.length - 1]
+        const lastItemsId = lastItem && lastItem.id || 0
+        return lastItemsId + 1
+    }
+
     async findItem(id) {
 
         const allItems = await this.findAll()
@@ -84,13 +92,16 @@ module.exports = class Service {
         
         return allItems.findIndex(p => p.id == itemID)
     }
+
     async updateService(itemID,obj){
         const allItems = await this.findAll()
+
         allItems.forEach(async item => {
-            if (item.id == itemID){
+            if (item.id === itemID){
                 await this.del(itemID)
-                await this.add(obj)
             }
+            await this.add(obj)
+            
         });
     }
 }
