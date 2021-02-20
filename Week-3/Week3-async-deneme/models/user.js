@@ -19,30 +19,34 @@ module.exports = class user {
     async createTweet(text) {
         let newTweet = new TweetModule(text, this, TweetService.createID())
         this.tweets.push(newTweet)
-        
+
         await TweetService.add(newTweet)
         // console.log(this.tweets)
     }
 
     async likeTweet(tweetID) {
         const theTweet = await TweetService.findItem(tweetID)
-        // const allTweets = await TweetService.findAll()
-        // const allLikes = await TweetService.findAll()
-
-        if (theTweet == undefined){
+        // Error handling
+        if (theTweet == undefined) {
             return console.log("Undefined tweet. Check tweet id.");
         }
-        const likeID = await LikeService.basicID()
+        // Check on different likes.
+        if (await LikeService.isBy(this.id) ){
+            
+            return console.log("You've already liked this tweet");
+        }
 
-        // Create like and push the like to tweet and user's likes.
-        const newLike = await new like(this,theTweet,likeID)
-        
+
+        // Create like 
+        const newLike = await new like(this, theTweet, await LikeService.basicID())
+
+        // Push like to user arrays
         await theTweet.likes.push(this.username)
-        await this.userLikes.push(newLike)
+        this.userLikes.push(newLike)
 
         await TweetService.updateService(tweetID, theTweet)
 
-        // await LikeService.updateService(tweetID, newLike)
+        await LikeService.updateService(this.id, newLike)
 
 
     }

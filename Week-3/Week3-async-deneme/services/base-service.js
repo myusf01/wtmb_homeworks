@@ -1,6 +1,8 @@
 const fs = require('fs')
 const Flatted = require('Flatted')
-const { resolve } = require('path')
+const {
+    resolve
+} = require('path')
 
 
 module.exports = class Service {
@@ -45,7 +47,7 @@ module.exports = class Service {
         return id
     }
 
-    async basicID(){
+    async basicID() {
         const allItems = await this.findAll()
 
         const lastItem = allItems[allItems.length - 1]
@@ -61,7 +63,7 @@ module.exports = class Service {
 
     async add(item) {
         const allItems = await this.findAll()
-        console.log(allItems);
+        // console.log(allItems);
         // item.id = this.createID()
 
         allItems.push(item)
@@ -70,15 +72,15 @@ module.exports = class Service {
     }
 
     // Implement del function to our code
-    async  del(itemId) {
+    async del(itemId) {
         const allItems = await this.findAll()
         const itemIndex = allItems.findIndex(p => p.id == itemId)
         if (itemIndex < 0) return
-    
+
         allItems.splice(itemIndex, 1)
-    
+
         await this.saveAll(allItems)
-      }
+    }
 
     async saveAll(items) {
         return new Promise((resolve, reject) => {
@@ -88,23 +90,39 @@ module.exports = class Service {
             })
         })
     }
-    async indexFind(itemID){
+    async indexFind(itemID) {
         const allItems = await this.findAll()
-        
+
         return allItems.findIndex(p => p.id == itemID)
     }
 
-    async updateService(itemID,obj){
+    async updateService(itemID, obj) {
         const allItems = await this.findAll()
+        const theItem = await this.findItem(itemID)
+        
+        if (theItem == undefined){
+            return await this.add(obj)
 
-        for (let index = 0; index < allItems.length; index++) {
-            const item = allItems[index];
-            if (item.id === itemID){
-                await this.del(itemID)
-                return await this.add(obj)
-            }
         }
 
+        if (allItems.length < 1) {
+            return await this.add(obj)
+        }
+        // Update service with new object
+        if(theItem.id === obj.id){
+            await this.del(itemID)
+            return await this.add(obj)
+        }else{
+            console.log("Hata mesajısı...");
+        }
+
+   
+        // if(theItem.id ===)
     }
 
+
+    async isBy(userID){
+        const allItems = await this.findAll()
+        return allItems.find(p => p.user.id == userID)
+    }
 }

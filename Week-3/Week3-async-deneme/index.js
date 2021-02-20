@@ -15,7 +15,7 @@ async function main() {
     const tweets = await TweetService.findAll()
     const likes = await LikeService.findAll()
 
-    +people[0].likeTweet('469792')
+    people[1].likeTweet('349416')
 
     // console.log(likes);
     console.log(tweets);
