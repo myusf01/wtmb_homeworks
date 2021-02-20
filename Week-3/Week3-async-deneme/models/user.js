@@ -32,14 +32,16 @@ module.exports = class user {
         if (theTweet == undefined){
             return console.log("Undefined tweet. Check tweet id.");
         }
+        const likeID = await LikeService.basicID()
 
         // Create like and push the like to tweet and user's likes.
-        const newLike = new like(this,theTweet)
+        const newLike = await new like(this,theTweet,likeID)
         
         await theTweet.likes.push(this.username)
         await this.userLikes.push(newLike)
 
-        await TweetService.updateService(tweetID,theTweet)
+        await TweetService.updateService(tweetID, theTweet)
+
         // await LikeService.updateService(tweetID, newLike)
 
 

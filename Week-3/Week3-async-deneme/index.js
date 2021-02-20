@@ -13,9 +13,10 @@ const LikeService = require('./services/like-service')
 async function main() {
     const people = await UserService.findAll() 
     const tweets = await TweetService.findAll()
-    // people[0].likeTweet('336329')
-
     const likes = await LikeService.findAll()
+
+    +people[0].likeTweet('469792')
+
     // console.log(likes);
     console.log(tweets);
 
