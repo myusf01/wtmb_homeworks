@@ -1,9 +1,5 @@
 const fs = require('fs')
 const Flatted = require('Flatted')
-const {
-    resolve
-} = require('path')
-
 
 module.exports = class Service {
     constructor(model, dbPath) {
@@ -81,6 +77,15 @@ module.exports = class Service {
 
         await this.saveAll(allItems)
     }
+    async newDel(itemId,foundIndex) {
+        const allItems = await this.findAll()
+        // const itemIndex = allItems.findIndex(p => p.id == itemId)
+        if (foundIndex < 0) return
+
+        allItems.splice(foundIndex, 1)
+
+        await this.saveAll(allItems)
+    }
 
     async saveAll(items) {
         return new Promise((resolve, reject) => {
@@ -90,39 +95,47 @@ module.exports = class Service {
             })
         })
     }
-    async indexFind(itemID) {
-        const allItems = await this.findAll()
 
-        return allItems.findIndex(p => p.id == itemID)
-    }
 
-    async updateService(itemID, obj) {
+
+    async updateService(itemID, newItem) {
         const allItems = await this.findAll()
-        const theItem = await this.findItem(itemID)
+        const currentItem = await this.findItem(itemID)
         
-        if (theItem == undefined){
-            return await this.add(obj)
+
+        // If there isn't any object that has itemID
+        if (currentItem == undefined){
+            return await this.add(newItem)
 
         }
-
+        // if list is empty
         if (allItems.length < 1) {
-            return await this.add(obj)
+            return await this.add(newItem)
         }
+
         // Update service with new object
-        if(theItem.id === obj.id){
+        if(currentItem.id === newItem.id){
             await this.del(itemID)
-            return await this.add(obj)
+            await this.add(newItem)
+            return
         }else{
             console.log("Hata mesajısı...");
         }
 
    
-        // if(theItem.id ===)
     }
-
-
-    async isBy(userID){
+    async findIndexByUserID(itemID) {
         const allItems = await this.findAll()
-        return allItems.find(p => p.user.id == userID)
+        const foundItem = allItems.findIndex(p => p.user.id == itemID)
+        if (foundItem < 0) return
+
+        return foundItem
+    }
+    async findIndexByTweetID(itemID) {
+        const allItems = await this.findAll()
+        const foundItem = allItems.findIndex(p => p.user.id == itemID)
+        if (foundItem < 0) return
+
+        return foundItem
     }
 }

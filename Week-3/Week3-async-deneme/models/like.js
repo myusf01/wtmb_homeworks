@@ -1,5 +1,3 @@
-const TweetService = require("../services/tweet-service")
-
 module.exports = class like {
     constructor(user,tweet,id= 0){
         this.user = user

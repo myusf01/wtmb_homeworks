@@ -5,6 +5,7 @@ class UserService extends BaseService {
     constructor(){
         super(UserModel,`${__dirname}/../database/user-database.json`)
     }
+    
 }
 
 

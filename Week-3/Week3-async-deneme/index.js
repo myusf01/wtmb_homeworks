@@ -20,6 +20,7 @@ async function main() {
 
     // people[1].likeTweet('699373')
     // people[1].dislikeTweet('699373')
+    
     // people[0].follow('161161')
 
     // console.log(likes);
