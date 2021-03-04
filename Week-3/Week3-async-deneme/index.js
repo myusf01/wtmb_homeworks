@@ -15,7 +15,7 @@ async function main() {
     const tweets = await TweetService.findAll()
     const likes = await LikeService.findAll()
 
-    // 0 velid
+    // 0 velid user
     // 1 yusuf
 
     // people[1].likeTweet('699373')
