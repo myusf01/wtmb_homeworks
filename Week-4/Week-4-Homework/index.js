@@ -1,32 +1,46 @@
 // TODO
 // 1.) Look for how to update user database
 //      after tweet liked or tweeted.
-
-const User = require('./models/user')
-const Tweet = require('./models/tweet')
+const express = require('express')
+const bodyParser = require('body-parser')
 
 const UserService = require('./services/user-service')
 const TweetService = require('./services/tweet-service')
 const LikeService = require('./services/like-service')
 
+const app = express()
+app.use(bodyParser.json())
+app.set('view engine', 'pug')
 
-async function main() {
-    const people = await UserService.findAll() 
+app.get('/',async (req,res) =>{
     const tweets = await TweetService.findAll()
-    const likes = await LikeService.findAll()
+    const users = await UserService.findAll()
 
-    // 0 velid
-    // 1 yusuf
+    res.render('index', {tweets,users})
+})
 
-    // people[1].likeTweet('699373')
-    // people[1].dislikeTweet('699373')
+
+app.get('/user/:id',async (req,res) =>{
+    const id = req.params.id
+    const user = await UserService.findItem(id)
     
-    // people[0].follow('161161')
+    const userTweets = await TweetService.findTweetByUserID(id)
 
-    // console.log(likes);
-    console.log(tweets);
-
-}
+    res.render('user', {user, userTweets})
+})
 
 
-main()
+
+
+app.get('/tweets/all',async (req,res) =>{
+    const tweetler = await TweetService.findAll()
+    const users = await UserService.findAll()
+    console.log(tweetler);
+
+    res.render('tweets',{tweetler, users})
+})
+
+app.listen(3000, (err) =>{
+  if (err) console.log(err);
+  console.log('Listening Server')
+})

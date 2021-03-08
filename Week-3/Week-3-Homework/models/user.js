@@ -4,7 +4,6 @@ const LikeService = require("../services/like-service")
 
 const TweetModule = require("./tweet")
 const like = require("./like")
-const userService = require("../services/user-service")
 
 
 module.exports = class user {

@@ -51,11 +51,7 @@ module.exports = class Service {
         return lastItemsId + 1
     }
 
-    async findItem(id) {
 
-        const allItems = await this.findAll()
-        return allItems.find(p => p.id == id)
-    }
 
     async add(item) {
         const allItems = await this.findAll()
@@ -124,18 +120,37 @@ module.exports = class Service {
 
    
     }
+
+    async findItem(id) {
+
+        const allItems = await this.findAll()
+        return allItems.find(p => p.id == id)
+    }
+
     async findIndexByUserID(itemID) {
         const allItems = await this.findAll()
-        const foundItem = allItems.findIndex(p => p.user.id == itemID)
-        if (foundItem < 0) return
+        const foundIndex = allItems.findIndex(p => p.user.id == itemID)
+        if (foundIndex < 0) return
 
-        return foundItem
+        return foundIndex
     }
     async findIndexByTweetID(itemID) {
         const allItems = await this.findAll()
-        const foundItem = allItems.findIndex(p => p.user.id == itemID)
-        if (foundItem < 0) return
+        const foundIndex = allItems.findIndex(p => p.user.id == itemID)
+        if (foundIndex < 0) return
 
-        return foundItem
+        return foundIndex
+    }
+    async findTweetByUserID(userID){
+        const allItems = await this.findAll()
+        const foundItem = allItems.find(p => p.user.id == userID)
+        const tweets = []
+        allItems.forEach(tweet => {
+            if (tweet.user.id == userID){
+                tweets.push(tweet)
+            }
+        });
+        if (foundItem != undefined) return tweets
+        
     }
 }

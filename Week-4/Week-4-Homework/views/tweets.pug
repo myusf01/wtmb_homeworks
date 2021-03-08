@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    h1 The number of tweets is #{tweetler.length}
+    each tweet in tweetler
+        h2 #{tweet.user.username} says; 
+        p #{tweet.text}
+        
