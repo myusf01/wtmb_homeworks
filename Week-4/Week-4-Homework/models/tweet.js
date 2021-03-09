@@ -1,6 +1,6 @@
 module.exports = class tweet {
 
-    constructor(text, user, id = null, likes = []) {
+    constructor(text = "", user, id = null, likes = []) {
         this.text = text
         this.user = user
         this.likes = likes

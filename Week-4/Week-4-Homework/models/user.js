@@ -31,8 +31,9 @@ module.exports = class user {
     }
 
 
-    async createTweet(text) {
-        let newTweet = new TweetModule(text, this, TweetService.createID())
+    async createTweet(text= "") {
+        const newTweet = new TweetModule(text, this, TweetService.createID())
+        console.log(newTweet);
         this.tweets.push(newTweet)
 
         await TweetService.add(newTweet)

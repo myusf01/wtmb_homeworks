@@ -3,6 +3,8 @@ extends layout
 block content
     h1 Hellolar efenim!
     h2 The number of tweets is #{tweets.length}
+    each user in users
+        h3 There's a user named as #{user.username}(ID= #{user.id})
     each tweet in tweets
         h3 #{tweet.user.username} says; 
         p #{tweet.text}
