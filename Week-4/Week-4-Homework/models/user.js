@@ -8,7 +8,7 @@ const like = require("./like")
 
 module.exports = class user {
 
-    constructor(username = '', userLikes = [], tweets = [], followers = [], followings = [], id = TweetService.createID()) {
+    constructor(username = '', userLikes = [], tweets = [], followers = [], followings = [], id = this.createID()) {
         this.username = username
         this.id = id
         this.userLikes = userLikes
@@ -39,6 +39,10 @@ module.exports = class user {
         await TweetService.add(newTweet)
     }
 
+    createID(){
+        const id =TweetService.createID()
+        return id
+    }
     async likeTweet(tweetID) {
         const theTweet = await TweetService.findItem(tweetID)
         const tweetAuthor = theTweet.user

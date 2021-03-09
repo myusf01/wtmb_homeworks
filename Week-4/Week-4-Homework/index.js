@@ -12,12 +12,6 @@ const app = express()
 app.use(bodyParser.json())
 app.set('view engine', 'pug')
 
-// FIXME:
-// User IDs when creating with app.post are resetting after
-// page reload. But somehow if you add id manually the new id
-// and older ids saving to database.
-
-
 // How to make two variable queries example
 // app.get('/:userID/:tweetID',async (req,res) =>{
 //     const tweetID = await TweetService.findItem(req.params.tweetID)
@@ -62,7 +56,7 @@ app.get('/tweet/:id', async (req, res) => {
 
 app.post('/user', async (req, res) => {
     console.log(req.body);
-    const newUser = await UserService.add(req.body)
+    const newUser = await UserService.add({username : req.body.username, id: UserService.createID()})
     res.send(newUser)
 
 })
