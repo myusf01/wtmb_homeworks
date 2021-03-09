@@ -29,15 +29,11 @@ app.get('/user/:id',async (req,res) =>{
     res.render('user', {user, userTweets})
 })
 
+app.get('/tweet/:id',async (req,res) =>{
+  const id = req.params.id
+  const tweet = await TweetService.findItem(id)
 
-
-
-app.get('/tweets/all',async (req,res) =>{
-    const tweetler = await TweetService.findAll()
-    const users = await UserService.findAll()
-    console.log(tweetler);
-
-    res.render('tweets',{tweetler, users})
+  res.render('tweet', {tweet : tweet})
 })
 
 app.listen(3000, (err) =>{
