@@ -30,7 +30,7 @@ app.get('/', async (req, res) => {
     const tweets = await TweetService.findAll()
     const users = await UserService.findAll()
 
-    console.log(tweets);
+    console.log(users);
 
     res.render('index', {
         tweets,
