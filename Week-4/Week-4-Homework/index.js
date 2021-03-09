@@ -17,12 +17,6 @@ app.set('view engine', 'pug')
 // page reload. But somehow if you add id manually the new id
 // and older ids saving to database.
 
-//FIXME:
-// Sending tweets by app.post is not working propelly.
-// it is sending text : "tweet" to text key so we have
-// text : {text : "tweet"} after post.
-
-
 
 // How to make two variable queries example
 // app.get('/:userID/:tweetID',async (req,res) =>{
@@ -79,7 +73,7 @@ app.post('/:ID/tweet',async (req,res) =>{
     const theUser = await UserService.findItem(theUserID)
 
     console.log(theUser);
-    const newTweet = await theUser.createTweet(req.body)
+    const newTweet = await theUser.createTweet(req.body.text)
     res.send(newTweet)
 })
 
