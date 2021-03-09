@@ -24,7 +24,6 @@ app.get('/', async (req, res) => {
     const tweets = await TweetService.findAll()
     const users = await UserService.findAll()
 
-    console.log(users);
 
     res.render('index', {
         tweets,
@@ -38,7 +37,7 @@ app.get('/user/:id', async (req, res) => {
     const user = await UserService.findItem(id)
 
     const userTweets = await TweetService.findTweetByUserID(id)
-    
+
     res.render('user', {
         user,
         userTweets
@@ -55,18 +54,19 @@ app.get('/tweet/:id', async (req, res) => {
 })
 
 app.post('/user', async (req, res) => {
-    console.log(req.body);
-    const newUser = await UserService.add({username : req.body.username, id: UserService.createID()})
+    const newUser = await UserService.add({
+        username: req.body.username,
+        id: UserService.createID()
+    })
     res.send(newUser)
 
 })
 
 //  "I love my yusos"
-app.post('/:ID/tweet',async (req,res) =>{
+app.post('/:ID/tweet', async (req, res) => {
     const theUserID = req.params.ID
     const theUser = await UserService.findItem(theUserID)
 
-    console.log(theUser);
     const newTweet = await theUser.createTweet(req.body.text)
     res.send(newTweet)
 })
