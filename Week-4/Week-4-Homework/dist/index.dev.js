@@ -155,6 +155,35 @@ app.post('/:ID/tweet', function _callee5(req, res) {
       }
     }
   });
+});
+app.post('/:userID/like', function _callee6(req, res) {
+  var userID, tweetID, user, theTweet;
+  return regeneratorRuntime.async(function _callee6$(_context6) {
+    while (1) {
+      switch (_context6.prev = _context6.next) {
+        case 0:
+          userID = req.params.userID;
+          tweetID = req.body.id;
+          _context6.next = 4;
+          return regeneratorRuntime.awrap(UserService.findItem(userID));
+
+        case 4:
+          user = _context6.sent;
+          _context6.next = 7;
+          return regeneratorRuntime.awrap(TweetService.findItem(tweetID));
+
+        case 7:
+          theTweet = _context6.sent;
+          user.likeTweet(tweetID);
+          console.log(theTweet);
+          res.send(theTweet);
+
+        case 11:
+        case "end":
+          return _context6.stop();
+      }
+    }
+  });
 }); // LISTEN
 
 app.listen(3000, function (err) {

@@ -76,6 +76,18 @@ app.post('/:ID/tweet', async (req, res) => {
     res.send(newTweet)
 })
 
+app.post('/:userID/like', async (req, res) => {
+    const userID = req.params.userID
+    const tweetID = req.body.id
+
+    const user = await UserService.findItem(userID)
+    const theTweet = await TweetService.findItem(tweetID)
+
+    user.likeTweet(tweetID)
+    console.log(theTweet);
+    res.send(theTweet)
+})
+
 
 // LISTEN
 app.listen(3000, (err) => {

@@ -44,6 +44,7 @@ module.exports = class user {
         return id
     }
     async likeTweet(tweetID) {
+        console.log(tweetID);
         const theTweet = await TweetService.findItem(tweetID)
         const tweetAuthor = theTweet.user
         // Error handling
