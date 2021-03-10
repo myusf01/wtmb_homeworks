@@ -12,14 +12,19 @@ const app = express()
 app.use(bodyParser.json())
 app.set('view engine', 'pug')
 
+// TODO:
+// Will add Like, Follow, Delete functions
+// as endpoints to app.
+
+// GET
+
 // How to make two variable queries example
 // app.get('/:userID/:tweetID',async (req,res) =>{
 //     const tweetID = await TweetService.findItem(req.params.tweetID)
 //     const userID = await UserService.findItem(req.params.userID)
-
 //     res.render('tweet', {tweet : tweetID, user: userID})
-
 // })
+
 app.get('/', async (req, res) => {
     const tweets = await TweetService.findAll()
     const users = await UserService.findAll()
@@ -53,6 +58,7 @@ app.get('/tweet/:id', async (req, res) => {
     })
 })
 
+// POST
 app.post('/user', async (req, res) => {
     const newUser = await UserService.add({
         username: req.body.username,
@@ -62,7 +68,6 @@ app.post('/user', async (req, res) => {
 
 })
 
-//  "I love my yusos"
 app.post('/:ID/tweet', async (req, res) => {
     const theUserID = req.params.ID
     const theUser = await UserService.findItem(theUserID)
@@ -72,7 +77,7 @@ app.post('/:ID/tweet', async (req, res) => {
 })
 
 
-
+// LISTEN
 app.listen(3000, (err) => {
     if (err) console.log(err);
     console.log('Listening Server')
