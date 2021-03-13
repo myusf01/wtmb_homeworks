@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 app.set('view engine', 'pug')
 
 // TODO:
-// Will add Like, Follow, Delete functions
+// Will add Follow, Delete functions
 // as endpoints to app.
 
 // GET
@@ -84,7 +84,7 @@ app.post('/:userID/like', async (req, res) => {
     const theTweet = await TweetService.findItem(tweetID)
 
     user.likeTweet(tweetID)
-    console.log(theTweet);
+    
     res.send(theTweet)
 })
 
