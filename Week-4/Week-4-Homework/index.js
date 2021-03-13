@@ -84,7 +84,7 @@ app.post('/:userID/like', async (req, res) => {
     const theTweet = await TweetService.findItem(tweetID)
 
     user.likeTweet(tweetID)
-    
+
     res.send(theTweet)
 })
 

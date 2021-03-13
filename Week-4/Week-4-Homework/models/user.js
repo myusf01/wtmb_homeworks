@@ -16,22 +16,22 @@ module.exports = class user {
         this.followers = followers
         this.followings = followings
     }
-    async follow(userID){
+    async follow(userID) {
         const theFollowing = await userService.findItem(userID)
         const followingIndex = this.followings.findIndex(p => p.id == this.id);
-        
-        if(followingIndex < 0){
+
+        if (followingIndex < 0) {
             this.followings.push(theFollowing.username)
             theFollowing.followers.push(this.username)
-            
-        }else{
+
+        } else {
             return null
         }
 
     }
 
 
-    async createTweet(text= "") {
+    async createTweet(text = "") {
         const newTweet = new TweetModule(text, this, TweetService.createID())
         console.log(newTweet);
         this.tweets.push(newTweet)
@@ -39,8 +39,8 @@ module.exports = class user {
         await TweetService.add(newTweet)
     }
 
-    createID(){
-        const id =TweetService.createID()
+    createID() {
+        const id = TweetService.createID()
         return id
     }
     async likeTweet(tweetID) {
@@ -52,8 +52,8 @@ module.exports = class user {
             return console.log("Undefined tweet. Check tweet id.");
         }
         // Check on different likes.
-        if (await LikeService.findIndexByUserID(this.id) ){
-            
+        if (await LikeService.findIndexByUserID(this.id)) {
+
             return console.log("You've already liked this tweet");
         }
 
@@ -74,20 +74,20 @@ module.exports = class user {
         // await UserService.updateService()
 
     }
-    async dislikeTweet(tweetID){
+    async dislikeTweet(tweetID) {
 
 
-        if (await LikeService.findIndexByUserID(this.id) >= 0){
+        if (await LikeService.findIndexByUserID(this.id) >= 0) {
             // const dislikedTweetIndex = TweetService.findIndexByTweetID(tweetID)
             const dislikedTweet = await TweetService.findItem(tweetID)
             const dislikedTweetIndex = dislikedTweet.likes.findIndex(p => p.id === this.id)
-            await dislikedTweet.likes.splice(dislikedTweetIndex,1)
+            await dislikedTweet.likes.splice(dislikedTweetIndex, 1)
 
 
             await LikeService.newDel(tweetID, await LikeService.findIndexByUserID(this.id))
-            await TweetService.updateService(tweetID,dislikedTweet)
+            await TweetService.updateService(tweetID, dislikedTweet)
 
-        }else{
+        } else {
             return null
 
         }
@@ -115,5 +115,3 @@ module.exports = class user {
 
     }
 }
-
-

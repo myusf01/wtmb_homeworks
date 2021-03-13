@@ -73,7 +73,7 @@ module.exports = class Service {
 
         await this.saveAll(allItems)
     }
-    async newDel(itemId,foundIndex) {
+    async newDel(itemId, foundIndex) {
         const allItems = await this.findAll()
         // const itemIndex = allItems.findIndex(p => p.id == itemId)
         if (foundIndex < 0) return
@@ -97,10 +97,10 @@ module.exports = class Service {
     async updateService(itemID, newItem) {
         const allItems = await this.findAll()
         const currentItem = await this.findItem(itemID)
-        
+
 
         // If there isn't any object that has itemID
-        if (currentItem == undefined){
+        if (currentItem == undefined) {
             return await this.add(newItem)
 
         }
@@ -110,15 +110,15 @@ module.exports = class Service {
         }
 
         // Update service with new object
-        if(currentItem.id === newItem.id){
+        if (currentItem.id === newItem.id) {
             await this.del(itemID)
             await this.add(newItem)
             return
-        }else{
+        } else {
             console.log("Hata mesajısı...");
         }
 
-   
+
     }
 
     async findItem(id) {
@@ -141,16 +141,16 @@ module.exports = class Service {
 
         return foundIndex
     }
-    async findTweetByUserID(userID){
+    async findTweetByUserID(userID) {
         const allItems = await this.findAll()
         const foundItem = allItems.find(p => p.user.id == userID)
         const tweets = []
         allItems.forEach(tweet => {
-            if (tweet.user.id == userID){
+            if (tweet.user.id == userID) {
                 tweets.push(tweet)
             }
         });
         if (foundItem != undefined) return tweets
-        
+
     }
 }

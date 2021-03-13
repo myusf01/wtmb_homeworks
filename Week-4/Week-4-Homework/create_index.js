@@ -16,7 +16,7 @@ async function main() {
 
 
     await people[0].createTweet("Deneme")
-    await people[1].createTweet("async ol artık!")  
+    await people[1].createTweet("async ol artık!")
     const tweets = await TweetService.findAll()
 
 }
