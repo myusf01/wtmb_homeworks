@@ -1,3 +1,5 @@
+// TODO:
+// Re-create Tweet Model.
 module.exports = class tweet {
 
     constructor(text = "", user, id = null, likes = []) {

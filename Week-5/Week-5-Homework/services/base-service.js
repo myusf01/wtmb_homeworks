@@ -1,3 +1,7 @@
+// TODO:
+// Refactor base service to use mongoDB methods to
+// do operations.
+
 const fs = require('fs')
 const Flatted = require('Flatted')
 

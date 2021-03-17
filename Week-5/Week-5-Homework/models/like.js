@@ -1,3 +1,5 @@
+// TODO:
+// Re-create or delete Like model
 module.exports = class like {
     constructor(user, tweet, id = 0) {
         this.user = user

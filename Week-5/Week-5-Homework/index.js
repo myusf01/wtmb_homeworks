@@ -1,6 +1,9 @@
-// TODO
-// 1.) Look for how to update user database
-//      after tweet liked or tweeted.
+// TODO:
+// re-create index file keep minimum data in it.
+// automatize data creation in another file or backup database
+// to avoid errors and mistakes in db and code.
+
+
 const express = require('express')
 const bodyParser = require('body-parser')
 

@@ -5,6 +5,12 @@ const LikeService = require("../services/like-service")
 const TweetModule = require("./tweet")
 const like = require("./like")
 
+// TODO:
+// Re-create user model according to mongoDB model.
+// Create service for every operation
+//  - LikeService, FollowService, TweetService
+//
+
 
 module.exports = class user {
 
