@@ -1,18 +1,13 @@
 // TODO:
 // Re-create or delete Like model
-module.exports = class like {
-    constructor(user, tweet, id = 0) {
-        this.user = user
-        this.tweet = tweet
-        this.id = id
-    }
 
-    static create({
-        user,
-        tweet,
-        id
-    }) {
+const mongoose = require('mongoose')
 
-        return new like(user, tweet, id)
-    }
-}
+const LikeSchema = new mongoose.Schema({
+    user: String,
+    tweet: String
+})
+
+LikeSchema.plugin(require('mongoose-autopopulate'))
+const LikeModel = mongoose.model('Like',LikeSchema)
+module.exports = LikeModel

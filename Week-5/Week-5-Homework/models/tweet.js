@@ -1,26 +1,16 @@
 // TODO:
 // Re-create Tweet Model.
-module.exports = class tweet {
 
-    constructor(text = "", user, id = null, likes = []) {
-        this.text = text
-        this.user = user
-        this.likes = likes
-        this.lenLikes = this.likes.length
-        this.id = id
-    }
+const mongoose = require('mongoose')
 
+const TweetSchema = new mongoose.Schema({
+    text: String,
+    user: String,
+    likes: []
+})
 
-    static create({
-        text,
-        user,
-        id,
-        likes
-    }) {
-        return new tweet(text, user, id, likes)
-    }
+TweetSchema.plugin(require('mongoose-autopopulate'))
 
-}
+const TweetModel = mongoose.model('Tweet',TweetSchema)
 
-
-// module.exports = tweet
+module.exports = TweetModel

@@ -1,3 +1,5 @@
+const mongoose = require('mongoose')
+
 const TweetService = require("../services/tweet-service")
 const LikeService = require("../services/like-service")
 // const UserService = require("../services/user-service")
@@ -6,13 +8,26 @@ const TweetModule = require("./tweet")
 const like = require("./like")
 
 // TODO:
-// Re-create user model according to mongoDB model.
+// 
+//  - Add Follow and Followers Lists to User Schema.
+
 // Create service for every operation
 //  - LikeService, FollowService, TweetService
 //
 
+const UserSchema = new mongoose.Schema({
+    name: String,
+    username: String,
+    userLikes: [],
+    tweets: []
+})
 
-module.exports = class user {
+UserSchema.plugin(require('mongoose-autopopulate'))
+const UserModel = mongoose.model('User',UserSchema)
+module.exports=UserModel
+
+
+class user {
 
     constructor(username = '', userLikes = [], tweets = [], followers = [], followings = [], id = this.createID()) {
         this.username = username
