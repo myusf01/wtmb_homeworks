@@ -11,7 +11,7 @@ var TweetService = require("../services/tweet-service");
 var LikeService = require("../services/like-service"); // const UserService = require("../services/user-service")
 
 
-var TweetModule = require("./tweet");
+var TweetModel = require("./tweet");
 
 var like = require("./like");
 
@@ -86,7 +86,7 @@ function () {
           switch (_context2.prev = _context2.next) {
             case 0:
               text = _args2.length > 0 && _args2[0] !== undefined ? _args2[0] : "";
-              newTweet = new TweetModule(text, this, TweetService.createID());
+              newTweet = new TweetModel(text, this, TweetService.createID());
               console.log(newTweet);
               this.tweets.push(newTweet);
               _context2.next = 6;

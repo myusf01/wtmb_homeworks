@@ -10,7 +10,7 @@ const UserService = require('../services/user-service')
 // })
 
 
-router.get('/user/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
     const id = req.params.id
     const user = await UserService.findItem(id)
 
@@ -22,11 +22,18 @@ router.get('/user/:id', async (req, res) => {
     })
 })
 
+router.get('/', async (req, res) => {
+    const user = await UserService.findAll()
+    res.render('user', {
+        user
+    })
+})
 
-router.post('/user', async (req, res) => {
+
+router.post('/', async (req, res) => {
     const newUser = await UserService.add({
         username: req.body.username,
-        id: UserService.createID()
+        name: req.body.name
     })
     res.send(newUser)
 
@@ -44,4 +51,9 @@ router.post('/:userID/like', async (req, res) => {
     res.send(theTweet)
 })
 
+router.delete('/:id',async (req,res) =>{
+    const userID = req.params.id 
+    await UserService.del(userID)
+    
+})
 module.exports = router

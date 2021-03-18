@@ -1,9 +1,11 @@
 const express = require('express')
 const router = new express.Router()
-const UserService = require('../services/tweet-service')
+const TweetService = require('../services/tweet-service')
+const UserService = require('../services/user-service')
 
 
-router.get('/tweet/:id', async (req, res) => {
+
+router.get('/:id', async (req, res) => {
     const id = req.params.id
     const tweet = await TweetService.findItem(id)
     res.render('tweet', {
@@ -12,12 +14,15 @@ router.get('/tweet/:id', async (req, res) => {
 })
 
 
-router.post('/:ID/tweet', async (req, res) => {
-    const theUserID = req.params.ID
-    const theUser = await UserService.findItem(theUserID)
+router.post('/:Id', async (req, res) => {
+    const user = await UserService.getUserById(req.params.Id)
+    const tweet = req.body.tweet
+    // const theUser = await UserService.findItem(theUserId)
+    // const newTweet = await TweetService.createTweet(await UserService.getUserById(userId),req.body.tweet)
+    await TweetService.addTweet(user,tweet)
+    res.send(tweet)
 
-    const newTweet = await theUser.createTweet(req.body.text)
-    res.send(newTweet)
+
 })
 
 

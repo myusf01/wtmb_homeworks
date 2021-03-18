@@ -2,7 +2,9 @@ extends layout
 
 block content
     h1 This is #{user.username}
-    h2 #{user.username} has #{userTweets.length} tweets.
-    each tweet in userTweets
-        h5 #{user.username} once said:
-        p  #{tweet.text}
+    h2 #{user.username} has tweets.
+    pre #{JSON.stringify(user, null, 4)}
+
+    //- each tweet in userTweets
+    //-     h5 #{user.username} once said:
+    //-     p  #{tweet.text}
