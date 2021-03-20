@@ -34,7 +34,10 @@ const UserSchema = new mongoose.Schema({
             maxDepth: 1
         }
     }],
-    userLikes: []
+    userLikes: [{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Tweet'
+    }]
     
 })
 

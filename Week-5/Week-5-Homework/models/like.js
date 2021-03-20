@@ -4,8 +4,20 @@
 const mongoose = require('mongoose')
 
 const LikeSchema = new mongoose.Schema({
-    user: String,
-    tweet: String
+    user: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'User',
+        autopopulate: {
+            maxDepth: 1
+        }
+    },
+    tweet: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref:'Tweet',
+        autopopulate: {
+            maxDepth: 1
+        }
+    }
 })
 
 LikeSchema.plugin(require('mongoose-autopopulate'))

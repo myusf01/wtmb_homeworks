@@ -1,8 +1,7 @@
 extends layout
 
 block content
-    h1 This is #{user.username}
-    h2 #{user.username} has tweets.
+    h1 This is User Page
     pre #{JSON.stringify(user, null, 4)}
 
     //- each tweet in userTweets

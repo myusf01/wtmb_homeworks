@@ -1,7 +1,8 @@
 const express = require('express')
 const router = new express.Router()
 const UserService = require('../services/user-service')
-
+const TweetService = require('../services/tweet-service')
+const LikeService = require('../services/like-service')
 // How to make two variable queries example
 // app.get('/:userID/:tweetID',async (req,res) =>{
 //     const tweetID = await TweetService.findItem(req.params.tweetID)
@@ -14,7 +15,7 @@ router.get('/:id', async (req, res) => {
     const id = req.params.id
     const user = await UserService.findItem(id)
 
-    const userTweets = await TweetService.findTweetByUserID(id)
+    const userTweets = await TweetService.findItem(id)
 
     res.render('user', {
         user,
@@ -30,6 +31,7 @@ router.get('/', async (req, res) => {
 })
 
 
+// Create new user
 router.post('/', async (req, res) => {
     const newUser = await UserService.add({
         username: req.body.username,
@@ -39,18 +41,20 @@ router.post('/', async (req, res) => {
 
 })
 
-router.post('/:userID/like', async (req, res) => {
+router.post('/:userID/like/:tweetID', async (req, res) => {
     const userID = req.params.userID
-    const tweetID = req.body.id
+    const tweetID = req.params.tweetID
 
     const user = await UserService.findItem(userID)
-    const theTweet = await TweetService.findItem(tweetID)
+    const tweet = await TweetService.findItem(tweetID)
 
-    user.likeTweet(tweetID)
+    const like = await LikeService.add({user: userID, tweet: tweetID})
+    await LikeService.createLike(user, tweet, like)
+    
 
-    res.send(theTweet)
 })
 
+// Delete user
 router.delete('/:id',async (req,res) =>{
     const userID = req.params.id 
     await UserService.del(userID)

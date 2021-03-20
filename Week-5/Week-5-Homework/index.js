@@ -5,6 +5,7 @@
 
 
 const express = require('express')
+const flatted = require('flatted')
 const bodyParser = require('body-parser')
 
 const UserService = require('./services/user-service')
@@ -35,6 +36,7 @@ app.set('view engine', 'pug')
 app.get('/', async (req, res) => {
     const tweets = await TweetService.findAll()
     const users = await UserService.findAll()
+    // console.log(tweets);
 
 
     res.render('index', {
