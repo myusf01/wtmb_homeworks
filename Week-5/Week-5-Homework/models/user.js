@@ -41,8 +41,17 @@ const UserSchema = new mongoose.Schema({
     
 })
 
+// Find by userID and delete the data from userLikes method.
+UserSchema.methods.findInUserLikesAndDelete = async function (userID,tweetID) {
+    return await UserModel.findByIdAndUpdate(userID,{
+        "$pull": {userLikes: tweetID}
+    })
+}
+
 UserSchema.plugin(require('mongoose-autopopulate'))
 const UserModel = mongoose.model('User',UserSchema)
+
+
 
 
 module.exports=UserModel

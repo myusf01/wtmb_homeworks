@@ -8,7 +8,6 @@ const UserService = require('../services/user-service')
 router.get('/:id', async (req, res) => {
     const id = req.params.id
     const tweet = await TweetService.findItem(id)
-    console.log(tweet);
     res.render('tweet', {
         tweet: tweet
     })
@@ -22,7 +21,7 @@ router.post('/:id', async (req, res) => {
     // const newTweet = await TweetService.createTweet(await UserService.getUserByid(userid),req.body.tweet)
     await TweetService.addTweet(user,tweet)
 
-    res.send(tweet)
+    await res.send(tweet)
 
 
 })

@@ -4,6 +4,7 @@ const LikeModel = require('../models/like')
 class LikeService extends BaseService {
     model = LikeModel
     service = LikeService
+
     async createLike(user,tweet,like){
         user.userLikes.push(tweet)
         tweet.likes.push(like)
@@ -13,9 +14,9 @@ class LikeService extends BaseService {
 
     }
 
-
-
-    
+    async dislikeTweet(user,tweet,like){
+        
+    }
 }
 
 

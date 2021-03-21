@@ -20,6 +20,7 @@ const LikeSchema = new mongoose.Schema({
     }
 })
 
+
 LikeSchema.plugin(require('mongoose-autopopulate'))
 const LikeModel = mongoose.model('Like',LikeSchema)
 module.exports = LikeModel

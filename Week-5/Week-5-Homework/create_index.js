@@ -1,25 +1,9 @@
-const User = require('./models/user')
-const Tweet = require('./models/tweet')
+axios.post('/user',{name: 'Velido', username: 'velid1'})
+axios.post('/user',{name: 'Yusufo', username: 'yusuf1'})
 
-const UserService = require('./services/user-service')
-const TweetService = require('./services/tweet-service')
-const LikeService = require('./services/like-service')
+axios.post('/tweet/6056454a35f1831254894970',{tweet: "hadi bakim haa"})
+axios.post('/tweet/6056454a35f1831254894971',{tweet: "hadi baktın haa"})
 
+axios.post('/like/60564587ff7f0957205858b5/user/6056454a35f1831254894970')
 
-async function main() {
-    const yusuf = new User('Yusuf')
-    const velid = new User('Velid')
-
-    await UserService.add(velid)
-    await UserService.add(yusuf)
-    const people = await UserService.findAll()
-
-
-    await people[0].createTweet("Deneme")
-    await people[1].createTweet("async ol artık!")
-    const tweets = await TweetService.findAll()
-
-}
-
-
-main()
+axios.post('/like/6056459851da6b56e48a7570/dislike')

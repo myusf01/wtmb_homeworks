@@ -41,18 +41,7 @@ router.post('/', async (req, res) => {
 
 })
 
-router.post('/:userID/like/:tweetID', async (req, res) => {
-    const userID = req.params.userID
-    const tweetID = req.params.tweetID
 
-    const user = await UserService.findItem(userID)
-    const tweet = await TweetService.findItem(tweetID)
-
-    const like = await LikeService.add({user: userID, tweet: tweetID})
-    await LikeService.createLike(user, tweet, like)
-    
-
-})
 
 // Delete user
 router.delete('/:id',async (req,res) =>{
