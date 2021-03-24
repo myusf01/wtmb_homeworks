@@ -1,8 +1,3 @@
-// TODO:
-// Refactor base service to use mongoDB methods to
-// do operations.
-const fs = require('fs')
-
 module.exports = class Service {
     async findAll() {
         return this.model.find()

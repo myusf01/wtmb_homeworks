@@ -1,5 +1,3 @@
-// TODO:
-// Re-create or delete Like model
 
 const mongoose = require('mongoose')
 

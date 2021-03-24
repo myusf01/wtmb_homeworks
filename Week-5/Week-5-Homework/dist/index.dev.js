@@ -15,9 +15,12 @@ var LikeService = require('./services/like-service');
 
 var app = express();
 app.use(bodyParser.json());
-app.set('view engine', 'pug'); // TODO:
+app.set('view engine', 'pug'); 
+
+// TODO:
 // Will add Like, Follow, Delete functions
 // as endpoints to app.
+
 // GET
 // How to make two variable queries example
 // app.get('/:userID/:tweetID',async (req,res) =>{

@@ -17,8 +17,6 @@ router.get('/:id', async (req, res) => {
 router.post('/:id', async (req, res) => {
     const user = await UserService.findItem(req.params.id)
     const tweet = req.body.tweet
-    // const theUser = await UserService.findItem(theUserid)
-    // const newTweet = await TweetService.createTweet(await UserService.getUserByid(userid),req.body.tweet)
     await TweetService.addTweet(user,tweet)
 
     await res.send(tweet)

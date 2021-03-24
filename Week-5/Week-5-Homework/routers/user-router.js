@@ -2,7 +2,6 @@ const express = require('express')
 const router = new express.Router()
 const UserService = require('../services/user-service')
 const TweetService = require('../services/tweet-service')
-const LikeService = require('../services/like-service')
 // How to make two variable queries example
 // app.get('/:userID/:tweetID',async (req,res) =>{
 //     const tweetID = await TweetService.findItem(req.params.tweetID)

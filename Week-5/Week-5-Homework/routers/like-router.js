@@ -22,35 +22,13 @@ router.post('/:tweetID/user/:userID', async (req, res) => {
     const user = await UserService.findItem(userID)
     const tweet = await TweetService.findItem(tweetID)
     const like = await LikeService.add({user: user, tweet: tweet})
-    await LikeService.createLike(user, tweet, like)
     
-    res.send(like)
+    await LikeService.createLike(user, tweet,like)
+    
+    // res.send(like)
 })
 
-//Dislike? Tweet
-router.post('/:likeID/dislike/',async (req,res) =>{
-    const likeID = req.params.likeID
-    const like = await LikeService.findItem(likeID)
 
-    const userID = like.user._id
-    const tweetID = like.tweet._id
-
-    const user = await UserService.findItem(userID)
-    const tweet = await TweetService.findItem(tweetID)
-
-
-    await user.findInUserLikesAndDelete(userID,tweetID)
-    await tweet.findInTweetLikesAndDelete(tweetID,likeID)
-    await LikeService.del(likeID)
-
-    
-    // console.log(finder);
-
-    res.send(tweet)
-
-
-
-})
 
 
 // Delete Like
