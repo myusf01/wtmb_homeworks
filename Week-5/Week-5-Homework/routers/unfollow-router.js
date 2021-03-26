@@ -9,10 +9,10 @@ router.post('/:id',async (req,res) =>{
 
     const follower = await UserService.findItem(followerID)
     const following = await UserService.findItem(followingID)
-    
-    await UserService.followUser(follower,following)
 
-    res.send(await UserService.findItem(followerID))
+    await UserService.unfollowUser(follower,following)
+
+    res.send()
     
 
 })

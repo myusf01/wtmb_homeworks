@@ -3,18 +3,19 @@
 
 
 const express = require('express')
-const flatted = require('flatted')
 const bodyParser = require('body-parser')
 
 const UserService = require('./services/user-service')
 const TweetService = require('./services/tweet-service')
-const LikeService = require('./services/like-service')
+
 
 const userRouter = require('./routers/user-router')
 const tweetRouter = require('./routers/tweet-router')
 const likeRouter = require('./routers/like-router')
 const unlikeRouter = require('./routers/unlike-router')
 const followRouter = require('./routers/follow-router')
+const unfollowRouter = require('./routers/unfollow-router')
+
 
 require('./mongo-connection')
 const app = express()
@@ -26,6 +27,8 @@ app.use('/tweet',tweetRouter)
 app.use('/like', likeRouter)
 app.use('/unlike', unlikeRouter)
 app.use('/follow', followRouter)
+app.use('/unfollow', unfollowRouter)
+
 
 
 app.set('view engine', 'pug')

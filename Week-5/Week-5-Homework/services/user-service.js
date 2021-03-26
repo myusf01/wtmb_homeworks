@@ -4,10 +4,39 @@ const UserModel = require('../models/user')
 class UserService extends BaseService {
     model = UserModel
 
-    async getUserById(userID){
+    async getUserById(userID) {
         return this.findItem(userID)
     }
-    
+
+    async followUser(follower, following) {
+
+        if ((await follower.checkIfUserFollows(following)) & (await following.checkIfFollowing(follower))) {
+            console.log(await follower.checkIfUserFollows(following));
+            return console.error(follower.name, " already following user!!", following.name);
+
+        } else {
+            following.followers.push(follower)
+            follower.followings.push(following)
+        }
+
+        await follower.save()
+        await following.save()
+    }
+
+    async unfollowUser(follower, following) {
+
+        if ((await follower.checkIfUserFollows(following)) &
+            (await following.checkIfFollowing(follower))) {
+
+
+                await following.findInFollowersAndDelete(following,follower)
+                await follower.findInFollowingsAndDelete(follower,following)
+
+        } else {
+            console.log("You're not following this user already.");
+        }
+    }
+
 }
 
 
