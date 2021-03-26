@@ -17,3 +17,8 @@ axios.post('/unfollow/605b7979f245c040a4a88ef8', {id: '605b79ba7a5cb14690732257'
 
 // delte users
 axios.delete('/user/605b7979f245c040a4a88ef8')
+
+
+axios.post('/retweet/60564587ff7f0957205858b7', {userID: '605b79ba7a5cb14690732257'})
+
+axios.post('/retweet/undo/60564587ff7f0957205858b7', {userID: '605b79ba7a5cb14690732257'})
