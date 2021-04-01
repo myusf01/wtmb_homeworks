@@ -80,7 +80,6 @@ test("Delete a user", async t => {
 
 
 // get a list of users.
-
 test('Get a list of created users.', async t => {
 
 
@@ -105,3 +104,4 @@ test('Get a list of created users.', async t => {
   t.true(Array.isArray(getListJson.body), "Body should be an array")
   t.true(getListJson.body.length > 0)
 })
+

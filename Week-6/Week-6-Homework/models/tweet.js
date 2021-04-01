@@ -18,7 +18,10 @@ const TweetSchema = new mongoose.Schema({
     }],
     retweetedUsers: [{
         type: mongoose.SchemaTypes.ObjectId,
-        ref:'User'
+        ref:'User',
+        autopopulate: {
+            maxDepth: 1
+        }
     }]
 })
 
