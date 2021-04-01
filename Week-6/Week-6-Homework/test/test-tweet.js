@@ -72,7 +72,7 @@ test("A user can delete tweet", async t => {
     .post(`/tweet/${createdUser.body._id}`)
     .send(newTweet)
 
-  t.is(sendTweet.status,200)
+  t.is(sendTweet.status, 200)
 
   // delete the created tweet.  
   const deleteTweet = await request(app)
@@ -82,9 +82,26 @@ test("A user can delete tweet", async t => {
   t.is(deleteTweet.ok, true)
 
   const fetchTweet = await request(app).get(`/tweet/${sendTweet.body._id}`)
-  t.is(fetchTweet.status,404)
+  t.is(fetchTweet.status, 404)
 
   const fetchTweetJson = await request(app).get(`/tweet/${sendTweet.body._id}/json`)
-  t.is(fetchTweetJson.status,404)
+  t.is(fetchTweetJson.status, 404)
+
+})
+
+
+test("Get a list of all tweets.", async t => {
+  t.plan(4)
+
+  // get rendered tweets view
+  const getTweetsRendered = await request(app).get('/tweet/all')
+  t.is(getTweetsRendered.status, 200)
+  // get json tweets
+  const getTweetsJson = await request(app).get('/tweet/all/json')
+  t.is(getTweetsJson.status, 200)
+  
+  // get tweet json body and check
+  t.true(Array.isArray(getTweetsJson.body),"Body should be an array!!")
+  t.true(getTweetsJson.body.length > 0)
 
 })

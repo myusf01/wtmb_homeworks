@@ -3,8 +3,20 @@ const router = new express.Router()
 const TweetService = require('../services/tweet-service')
 const UserService = require('../services/user-service')
 
+router.get('/all',async (req,res) =>{
+    const allTweets = await TweetService.findAll()
+    res.render('alltweets',{
+        tweets:allTweets
+    })
 
-// Get tweets
+})
+
+router.get('/all/json',async (req,res) =>{
+    const allTweets = await TweetService.findAll()
+    res.send(allTweets)
+})
+
+// Get a tweet
 router.get('/:id', async (req, res) => {
     const id = req.params.id
     const tweet = await TweetService.findItem(id)
