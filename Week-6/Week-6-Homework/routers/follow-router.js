@@ -7,14 +7,44 @@ router.post('/:id',async (req,res) =>{
     const followerID = req.params.id
     const followingID = req.body.id
 
-    const follower = await UserService.findItem(followerID)
-    const following = await UserService.findItem(followingID)
+    let follower = await UserService.findItem(followerID)
+    let following = await UserService.findItem(followingID)
     
-    await UserService.followUser(follower,following)
+    const followAction = await UserService.followUser(follower,following)
 
-    res.send(await UserService.findItem(followerID))
+    // follower = await UserService.findItem(followerID)
+    // 471=> Expectation Failed Error Code
+    if(!followAction) res.status(417)
+
+    res.send(following)
     
 
 })
+
+router.get('/getFollower/:id',async (req,res) =>{
+    const userID = req.params.id
+    const followerID = req.body.id
+
+    const theUser = await UserService.findItem(userID)
+    const theFollower = await UserService.findItem(followerID)
+
+    const checkFollower = await theUser.checkIfFollowing(followerID)
+    if(!checkFollower) res.status(404)
+    res.send(theFollower)
+})
+
+router.get('/getFollowing/:id',async (req,res) =>{
+    const userID = req.params.id
+    const followingID = req.body.id
+
+    const theUser = await UserService.findItem(userID)
+    const theFollowing = await UserService.findItem(followingID)
+
+    const checkFollower = await theUser.checkIfUserFollows(followingID)
+    if(!checkFollower) res.status(404)
+
+    res.send(theFollowing)
+})
+
 
 module.exports = router

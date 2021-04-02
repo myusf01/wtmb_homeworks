@@ -8,8 +8,8 @@ class UserService extends BaseService {
     async followUser(follower, following) {
 
         if ((await follower.checkIfUserFollows(following)) & (await following.checkIfFollowing(follower))) {
-            console.log(await follower.checkIfUserFollows(following));
-            return console.error(follower.name, " already following user!!", following.name);
+            console.error(follower.name, " already following user!!", following.name);
+            return false
 
         } else {
             following.followers.push(follower)
@@ -18,6 +18,8 @@ class UserService extends BaseService {
 
         await follower.save()
         await following.save()
+        return true
+       
     }
 
     async unfollowUser(follower, following) {
