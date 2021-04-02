@@ -17,10 +17,13 @@ router.post('/:likeID',async (req,res) =>{
     // single line.
 
     const user = await UserService.findItem(userID)
-    const tweet = await TweetService.findItem(tweetID)
+    let tweet = await TweetService.findItem(tweetID)
 
     await LikeService.dislikeTweet(user,tweet,like)
     await LikeService.del(likeID)
+
+    tweet = await TweetService.findItem(tweetID)
+    res.send(tweet)
 })
 
 module.exports = router

@@ -1,6 +1,6 @@
 import test from 'ava'
 import request from 'supertest'
-import app, { all } from '../app'
+import app from '../app'
 
 test("A user can like a tweet.", async t => {
     t.plan(8)
