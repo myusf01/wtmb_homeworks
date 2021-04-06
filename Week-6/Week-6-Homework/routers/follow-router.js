@@ -40,8 +40,10 @@ router.get('/getFollowing/:id',async (req,res) =>{
     const theUser = await UserService.findItem(userID)
     const theFollowing = await UserService.findItem(followingID)
 
-    const checkFollower = await theUser.checkIfUserFollows(followingID)
-    if(!checkFollower) res.status(404)
+    const checkFollowing = await theUser.checkIfUserFollows(followingID)
+
+   
+    if(!checkFollowing) res.status(404)
 
     res.send(theFollowing)
 })

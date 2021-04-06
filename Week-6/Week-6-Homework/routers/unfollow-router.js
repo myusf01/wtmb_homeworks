@@ -4,15 +4,16 @@ const UserService = require('../services/user-service')
 
 
 router.post('/:id',async (req,res) =>{
-    const followerID = req.params.id
-    const followingID = req.body.id
+    const followerID = req.body.id
+    const followingID = req.params.id
 
     const follower = await UserService.findItem(followerID)
     const following = await UserService.findItem(followingID)
 
-    await UserService.unfollowUser(follower,following)
-
-    res.send()
+    const unfollowAct = await UserService.unfollowUser(follower,following)
+    if (!unfollowAct){
+        res.status(404)    }
+    res.send(following)
     
 
 })

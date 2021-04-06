@@ -31,8 +31,10 @@ class UserService extends BaseService {
             await following.findInFollowersAndDelete(following, follower)
             await follower.findInFollowingsAndDelete(follower, following)
 
+            return true
         } else {
             console.log("You're not following this user already.");
+            return false
         }
     }
 
