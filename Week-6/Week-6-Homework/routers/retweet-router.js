@@ -1,8 +1,9 @@
 const express = require('express')
 const router = new express.Router()
-const LikeService = require('../services/like-service')
+
 const UserService = require('../services/user-service')
 const TweetService = require('../services/tweet-service')
+const RetweetService = require('../services/retweet-service')
 
 
 router.post('/:tweetID',async (req,res) =>{
@@ -12,20 +13,25 @@ router.post('/:tweetID',async (req,res) =>{
     const user = await UserService.findItem(userID)
     const tweet = await TweetService.findItem(tweetID)
 
-    await UserService.retweet(user,tweet)
-  res.send()
+    const retweet = await RetweetService.add({tweet: tweet, user: user})
+
+    const theRetweet = await RetweetService.retweet(user,tweet,retweet)
+
+    if (!theRetweet) res.status(404)
+    res.send(tweet)
 })
 
 
-router.post('/undo/:tweetID',async (req,res) =>{
-    const tweetID = req.params.tweetID
-    const userID = req.body.userID
+router.post('/undo/:retweetID',async (req,res) =>{
 
-    const user = await UserService.findItem(userID)
-    const tweet = await TweetService.findItem(tweetID)
+  const retweetID = req.params.retweetID
+  const retweet = await RetweetService.findItem(retweetID)
 
-    await UserService.undoRetweet(user,tweet)
-  res.send()
+  const user = await UserService.findItem(retweet.user._id)
+
+  const undo = await RetweetService.undoRetweet(user,retweet)
+  if(!undo) res.status(404)
+  res.send(retweet.tweet)
 })
 
 

@@ -22,10 +22,10 @@ router.get('/all/json', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const id = req.params.id
     const user = await UserService.findItem(id)
+    if (!user) res.status(404)
 
     const userTweets = await TweetService.findItem(id)
     
-    if (!user) res.status(404)
 
     res.render('user', {
         user,
@@ -37,6 +37,7 @@ router.get('/:id', async (req, res) => {
 router.get('/:id/json', async (req, res) => {
     const id = req.params.id
     const user = await UserService.findItem(id)
+    
     if (!user) res.status(404)
 
     res.send(user)

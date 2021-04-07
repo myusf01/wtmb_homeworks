@@ -28,7 +28,7 @@ const UserSchema = new mongoose.Schema({
     }],
     retweets: [{
         type: mongoose.SchemaTypes.ObjectId,
-        ref: 'Tweet',
+        ref: 'Retweet',
         autopopulate: {
             maxDepth: 1
         }
@@ -48,18 +48,11 @@ const UserSchema = new mongoose.Schema({
 
 })
 
-UserSchema.methods.checkIfUserRetweeted = async function (tweet){
-    const isExists = await UserModel.exists({retweets: tweet})
-    if (isExists){
-        return true
-    }
 
-    return false
-}
-UserSchema.methods.findInRetweetsAndDelete = async function (tweet,user){
+UserSchema.methods.findInRetweetsAndDelete = async function (retweet,user){
     return await UserModel.findByIdAndUpdate(user,{
         "$pull": {
-            retweets: tweet
+            retweets: retweet
         }
     })
 }

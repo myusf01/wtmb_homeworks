@@ -16,8 +16,16 @@ module.exports = class Service {
     }
 
     async findItem(id) {
-
         return this.model.findById(id)
+        // if (await this.checkIdValid(id)){
+        //     return this.model.findById(id)
+        // } else return false
 
     }
+//     async checkIdValid(id){
+//         if (id.match(/^[0-9a-fA-F]{24}$/)) {
+//             return true
+//           }
+//         else return false
+//     }
 }

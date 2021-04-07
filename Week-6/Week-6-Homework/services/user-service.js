@@ -38,45 +38,6 @@ class UserService extends BaseService {
         }
     }
 
-    async retweet(user, tweet) {
-
-        if ((await user.checkIfUserRetweeted(tweet))
-
-            &
-            (await tweet.checkIfRetweetExists(user))) {
-
-                console.log("You've already retweeted!!!");
-
-
-        } else {
-            user.retweets.push(tweet)
-            tweet.retweetedUsers.push(user)
-
-        }
-        
-        await user.save()
-        await tweet.save()
-    }
-
-    async undoRetweet(user,tweet){
-        if ((await user.checkIfUserRetweeted(tweet))
-
-        &
-        (await tweet.checkIfRetweetExists(user))) {
-            //Undo retweet
-
-            await user.findInRetweetsAndDelete(tweet._id,user._id)
-            await tweet.findInRetweetsAndDelete(user._id,tweet._id)
-                
-            await user.save()
-            await tweet.save()
-
-
-        } else {
-            console.log("You're not retweeted this tweet already!!");
-        }
-
-    }
 }
 
 
