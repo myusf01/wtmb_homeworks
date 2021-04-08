@@ -5,14 +5,13 @@ const LikeService = require('../services/like-service')
 const UserService = require('../services/user-service')
 const TweetService = require('../services/tweet-service')
 
-//Dislike? Tweet
 router.post('/:likeID',async (req,res) =>{
     const likeID = req.params.likeID
     
     const like = await LikeService.findItem(likeID)
     const userID = like.user._id
     const tweetID = like.tweet._id
-    
+
     //TODO:
     // Figure out how to achieve functions below in
     // single line.
