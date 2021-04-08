@@ -3,7 +3,6 @@ import request from 'supertest'
 import app from '../app'
 
 test("A user can like a tweet.", async t => {
-    t.plan(8)
     // Dummy user data
     const user1Data = {
         name: "Ben 1 Num.",
@@ -65,7 +64,6 @@ test("A user can like a tweet.", async t => {
 })
 
 test("Fetch all likes.", async t => {
-    t.plan(10)
     // Dummy user data
     const user1Data = {
         name: "Ben 1 Num.",

@@ -12,8 +12,9 @@ router.post('/:likeID',async (req,res) =>{
     const like = await LikeService.findItem(likeID)
     const userID = like.user._id
     const tweetID = like.tweet._id
+    
     //TODO:
-    // Figure out how to achieve functionson below in
+    // Figure out how to achieve functions below in
     // single line.
 
     const user = await UserService.findItem(userID)

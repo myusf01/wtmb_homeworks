@@ -15,10 +15,10 @@ router.post('/:tweetID',async (req,res) =>{
 
     const retweet = await RetweetService.add({tweet: tweet, user: user})
 
-    const theRetweet = await RetweetService.retweet(user,tweet,retweet)
+    const retweetAction = await RetweetService.retweet(user,tweet,retweet)
 
-    if (!theRetweet) res.status(404)
-    res.send(tweet)
+    if (!retweetAction) res.status(404)
+    res.send(retweet)
 })
 
 

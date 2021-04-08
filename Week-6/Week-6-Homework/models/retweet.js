@@ -25,12 +25,12 @@ RetweetSchema.methods.checkRetweet = async function (retweet){
         tweet: retweet.tweet,
         user: retweet.user
     })
+    
     if (isExists){
         return true
 
     }
 
-    return false
 }
 
 const RetweetModel = mongoose.model('Retweet', RetweetSchema)

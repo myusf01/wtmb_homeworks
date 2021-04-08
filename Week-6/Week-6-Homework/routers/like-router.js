@@ -20,10 +20,7 @@ router.get('/:id', async (req, res) => {
     if (!like) res.status(404)
 
     // console.log(like);
-    if(like){
-        res.render('like', {
-            like
-    })}
+    if(like) res.render('like', {like})
 })
 
 // Get a like JSON
@@ -48,15 +45,5 @@ router.post('/:tweetID', async (req, res) => {
     
     res.send(like)
 })
-
-
-
-
-// // Delete Like
-// router.delete('/dislike/:id',async (req,res) =>{
-//     const Likeid = req.params.id
-//     await LikeService.del(Likeid)
-    
-// })
 
 module.exports = router

@@ -3,7 +3,6 @@ import request from 'supertest'
 import app from '../app'
 
 test("Unlike tweet.", async t => {
-    t.plan(12)
     // Dummy user data
     const user1Data = {
         name: "Ben 1 Num.",
@@ -66,7 +65,8 @@ test("Unlike tweet.", async t => {
 
     t.is(like2.status, 200)
     t.is(like2.ok, true)
-   
+    
+
 
     // Fetch latest version of tweet to check after unlike
 
@@ -81,6 +81,9 @@ test("Unlike tweet.", async t => {
     t.is(unlikeTweet1.status,200)
     t.is(unlikeTweet1.ok,true)
 
+    // const getRemovedLike = await request(app)
+    //     .get(`/like/${like1.body._id}`)
+    // t.is(getRemovedLike.status,404)
     const fetchedTweetNew = unlikeTweet1.body
     t.true(fetchedTweetOld.likes.length > fetchedTweetNew.likes.length)
     t.notDeepEqual(fetchedTweetOld,fetchedTweetNew)

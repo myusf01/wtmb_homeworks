@@ -4,7 +4,6 @@ import app from '../app'
 
 // A user can tweet.
 test("User can tweet.", async t => {
-  t.plan(6)
   // create user
   const newUser = {
     username: "tuser1",
@@ -38,6 +37,13 @@ test("User can tweet.", async t => {
 
   // check if user has tweets is in users tweets array.
   t.is(fetchNewUser.body.tweets[0]._id, sendTweet.body._id)
+
+
+  //fetch the tweet.
+  const fetchTweet = await request(app)
+    .get(`/tweet/${sendTweet.body._id}`)
+
+  t.is(fetchTweet.status,200)
 
   // check if test tweet is in users tweets.
   // is not working due to autopopulation of user.

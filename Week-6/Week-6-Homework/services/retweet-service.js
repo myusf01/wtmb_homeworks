@@ -1,9 +1,5 @@
 const BaseService = require('./base-service')
 const RetweetModel = require('../models/retweet')
-// !!!!!!!!!!!!!!!!! 
-// FIXME:
-// Fix undoing retweet functions.
-// !!!!!!!!!!!!!!!!!
 
 class RetweetService extends BaseService {
     model = RetweetModel
@@ -45,9 +41,6 @@ class RetweetService extends BaseService {
             await tweet.save()
             return true
 
-        } else {
-            console.log("You're not retweeted this tweet already!!");
-            return false
         }
 
     }

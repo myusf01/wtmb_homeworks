@@ -1,11 +1,4 @@
 const mongoose = require('mongoose')
-// TODO:
-// 
-//  - Add Follow and Followers Lists to User Schema.
-
-// Create service for every operation
-//  - FollowService
-//
 
 const UserSchema = new mongoose.Schema({
     name: {
