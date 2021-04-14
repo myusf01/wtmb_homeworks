@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 
 const UserService = require('./services/user-service')
 const TweetService = require('./services/tweet-service')
+const cors = require('cors')
 
 const userRouter = require('./routers/user-router')
 const tweetRouter = require('./routers/tweet-router')
@@ -17,7 +18,7 @@ require('./mongo-connection')
 const app = express()
 app.set('view engine', 'pug')
 
-
+app.use(cors())
 app.use(bodyParser.json())
 app.use('/user', userRouter)
 app.use('/tweet', tweetRouter)
