@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/home/index.vue'
 
 Vue.use(VueRouter)
 
@@ -11,13 +11,68 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/explore',
+    name: 'Explore',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/About.vue')
+      import(/* webpackChunkName: "explore" */ '../views/explore')
+  },
+  {
+    path: '/messages',
+    name: 'Messages',
+    component: () =>
+      import(/* webpackChunkName: "messages" */ '../views/messages')
+  },
+  {
+    path: '/notifications',
+    name: 'Notifications',
+    component: () =>
+      import(/* webpackChunkName: "notifications" */ '../views/notifications')
+  },
+  {
+    path: '/lists',
+    name: 'Lists',
+    component: () => import(/* webpackChunkName: "lists" */ '../views/lists')
+  },
+  {
+    path: '/bookmarks',
+    name: 'Bookmarks',
+    component: () =>
+      import(/* webpackChunkName: "bookmarks" */ '../views/bookmarks')
+  },
+
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: () =>
+      import(/* webpackChunkName: "profile" */ '../views/profile'),
+    children: [
+      {
+        path: '',
+        name: 'ProfileTweets',
+        component: () =>
+          import(/* webpackChunkName: "profile" */ '../views/profile/tweets')
+      },
+      {
+        path: 'with-replies',
+        name: 'ProfileWithReplies',
+        component: () =>
+          import(
+            /* webpackChunkName: "profile" */ '../views/profile/with-replies'
+          )
+      },
+      {
+        path: 'media',
+        name: 'ProfileMedia',
+        component: () =>
+          import(/* webpackChunkName: "profile" */ '../views/profile/media')
+      },
+      {
+        path: 'likes',
+        name: 'ProfileLikes',
+        component: () =>
+          import(/* webpackChunkName: "profile" */ '../views/profile/likes')
+      }
+    ]
   }
 ]
 
