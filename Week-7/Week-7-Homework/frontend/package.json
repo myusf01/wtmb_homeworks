@@ -28,7 +28,8 @@
     "postcss-nested": "^4.2.3",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.6.12"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
