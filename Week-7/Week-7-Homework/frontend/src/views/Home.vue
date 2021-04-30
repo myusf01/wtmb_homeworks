@@ -5,16 +5,19 @@
     <CustomText tag="p">Hele Hele Dünya</CustomText>
     <CustomText tag="p" size="small">Hele Hele Dünya</CustomText>
     <CustomText tag="b" size="large">Hele Hele Dünya</CustomText>
+    <IconHome fill="black"/>
   </div>
 </template>
 
 <script>
 import CustomText from '@/components/CustomText'
+import IconHome from '@/icons/menu/home.svg'
 
 export default {
   name: 'Home',
   components: {
-    CustomText
+    CustomText,
+    IconHome
   }
 }
 </script>
