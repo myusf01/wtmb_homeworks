@@ -1,22 +1,18 @@
 const BaseService = require('./base-service')
 const TweetModel = require('../models/tweet')
 
-
 class TweetService extends BaseService {
-    model = TweetModel
+  model = TweetModel
 
-    async addTweet(user, tweetText) {
-        const newTweet = new TweetModel({text : tweetText, user: user._id})
-        user.tweets.push(newTweet)
+  async addTweet(user, tweetText) {
+    const newTweet = new TweetModel({ text: tweetText, user: user._id })
+    user.tweets.push(newTweet)
 
-        await user.save()
-        await newTweet.save()
+    await user.save()
+    await newTweet.save()
 
-        return newTweet
-    }
-
-                                                                                                                                                                                                                                                                            
+    return newTweet
+  }
 }
 
-
-module.exports = new TweetService();
+module.exports = new TweetService()

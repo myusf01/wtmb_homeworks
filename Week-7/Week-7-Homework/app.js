@@ -28,20 +28,17 @@ app.use('/unlike', unlikeRouter)
 app.use('/follow', followRouter)
 app.use('/unfollow', unfollowRouter)
 
-
-
 // GET
 
 app.get('/', async (req, res) => {
-    const tweets = await TweetService.findAll()
-    const users = await UserService.findAll()
-    // console.log(tweets);
+  const tweets = await TweetService.findAll()
+  const users = await UserService.findAll()
+  // console.log(tweets);
 
-
-    res.render('index', {
-        tweets,
-        users
-    })
+  res.render('index', {
+    tweets,
+    users
+  })
 })
 
 module.exports = app

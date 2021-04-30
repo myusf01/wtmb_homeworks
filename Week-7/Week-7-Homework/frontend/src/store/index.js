@@ -18,18 +18,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    incrementCounter({
-      commit,
-      state
-    }) {
+    incrementCounter({ commit, state }) {
       const newCount = state.counter + 1
       commit('SET_COUNTER', newCount)
-
-
     },
-    async fetchTweets({
-      commit
-    }) {
+    async fetchTweets({ commit }) {
       const result = await axios.get('http://localhost:3000/tweet/all/json')
       commit('SET_TWEETS', result.data)
     }

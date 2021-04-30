@@ -4,12 +4,9 @@ const BaseService = require('./base-service')
 const FollowModel = require('../models/Follow')
 
 class FollowService extends BaseService {
-    model = FollowModel
+  model = FollowModel
 
-    async followUser(follower,following){
-        
-    }
+  async followUser(follower, following) {}
 }
 
-
-module.exports = new FollowService();
+module.exports = new FollowService()

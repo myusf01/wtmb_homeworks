@@ -24,6 +24,8 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^9.5.0",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-nested": "^4.2.3",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "vue-template-compiler": "^2.6.11"
