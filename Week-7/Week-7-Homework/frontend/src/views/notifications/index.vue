@@ -1,5 +1,5 @@
 <template>
-  <div class="notifications">
+  <div class="Notifications">
     <CustomText tag="h1">Hele Hele Notifications</CustomText>
   </div>
 </template>

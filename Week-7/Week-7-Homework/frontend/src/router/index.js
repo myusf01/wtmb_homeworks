@@ -48,7 +48,7 @@ const routes = [
     children: [
       {
         path: '',
-        name: 'ProfileTweets',
+        name: 'Profile',
         component: () =>
           import(/* webpackChunkName: "profile" */ '../views/profile/tweets')
       },

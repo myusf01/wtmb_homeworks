@@ -1,16 +1,27 @@
 <template>
   <div id="app">
-    <nav id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/profile">Profile</router-link> |
-      <router-link to="/notifications">Notifications</router-link> |
-      <router-link to="/explore">Explore</router-link> |
-      <router-link to="/lists">Lists</router-link> |
-      <router-link to="/bookmarks">Bookmarks</router-link> |
-      <router-link to="/messages">Messages</router-link> |
-    </nav>
-    <router-view />
+    <MasterHeader />
+    <main class="main">
+      <Container>
+        <router-view />
+      </Container>
+    </main>
   </div>
 </template>
 
-<style></style>
+<script>
+import MasterHeader from '@/components/Header'
+import Container from '@/components/Container'
+export default {
+  name: 'App',
+  components: {
+    MasterHeader,
+    Container
+  }
+}
+</script>
+<style lang="postcss" scoped>
+.main {
+  padding-top: 40px;
+}
+</style>

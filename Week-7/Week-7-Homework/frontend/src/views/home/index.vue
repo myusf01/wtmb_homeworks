@@ -6,7 +6,6 @@
 
 <script>
 import CustomText from '@/components/CustomText'
-import IconHome from '@/icons/menu/home.svg'
 
 export default {
   name: 'Home',

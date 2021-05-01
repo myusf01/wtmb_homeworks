@@ -1,5 +1,5 @@
 <template>
-  <div class="Profile Tweets">
+  <div class="Profile">
     <CustomText tag="h1">Hele Hele Profile Tweets</CustomText>
   </div>
 </template>
@@ -8,7 +8,7 @@
 import CustomText from '@/components/CustomText'
 
 export default {
-  name: 'ProfileTweets',
+  name: 'Profile',
   components: {
     CustomText
   }
