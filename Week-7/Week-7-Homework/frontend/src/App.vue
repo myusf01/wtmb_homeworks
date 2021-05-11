@@ -21,7 +21,14 @@ export default {
 }
 </script>
 <style lang="postcss" scoped>
+#app {
+  display: flex;
+  justify-content: center;
+}
 .main {
-  padding-top: 40px;
+  display: flex;
+  padding: 40px;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>

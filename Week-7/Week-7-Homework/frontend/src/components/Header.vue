@@ -1,54 +1,52 @@
 <template>
   <header class="header">
-    <Container class="header-inner">
-      <nav class="navigation">
-        <router-link to="/"> <IconTwitter /></router-link>
-        <router-link to="/" class="mobile">
-          <IconHomeFill v-if="$route.name === 'Home'" />
-          <IconHome v-else />
-          <span class="header-text">Home</span>
-        </router-link>
-        <router-link to="/explore" class="mobile">
-          <IconExploreFill
-            class="desktop-explore"
-            v-if="$route.name === 'Explore'"
-          />
-          <IconExplore class="desktop-explore" v-else />
-          <IconSearch class="mobile-explore" />
-          <span class="header-text">Explore</span>
-        </router-link>
-        <router-link to="/notifications" class="mobile">
-          <IconNotificationFill v-if="$route.name === 'Notifications'" />
-          <IconNotification v-else />
-          <span class="header-text">Notifications</span>
-        </router-link>
-        <router-link to="/messages" class="mobile">
-          <IconMessageFill v-if="$route.name === 'Messages'" />
-          <IconMessage v-else />
-          <span class="header-text">Messages</span>
-        </router-link>
-        <router-link to="/bookmarks">
-          <IconBookmarkFill v-if="$route.name === 'Bookmarks'" />
-          <IconBookmark v-else />
-          <span class="header-text">Bookmarks</span>
-        </router-link>
-        <router-link to="/lists">
-          <IconListsFill v-if="$route.name === 'Lists'" />
-          <IconLists v-else />
-          <span class="header-text">Lists</span>
-        </router-link>
-        <router-link to="/profile">
-          <IconProfileFill v-if="$route.name === 'Profile'" />
-          <IconProfile v-else />
-          <span class="header-text">Profile</span>
-        </router-link>
-        <!-- POPUP -->
-        <router-link to="/more">
-          <IconMore />
-          <span class="header-text">More</span>
-        </router-link>
-      </nav>
-    </Container>
+    <nav class="navigation">
+      <router-link to="/"> <IconTwitter /></router-link>
+      <router-link to="/" class="mobile">
+        <IconHomeFill v-if="$route.name === 'Home'" />
+        <IconHome v-else />
+        <span class="header-text">Home</span>
+      </router-link>
+      <router-link to="/explore" class="mobile">
+        <IconExploreFill
+          class="desktop-explore"
+          v-if="$route.name === 'Explore'"
+        />
+        <IconExplore class="desktop-explore" v-else />
+        <IconSearch class="mobile-explore" />
+        <span class="header-text">Explore</span>
+      </router-link>
+      <router-link to="/notifications" class="mobile">
+        <IconNotificationFill v-if="$route.name === 'Notifications'" />
+        <IconNotification v-else />
+        <span class="header-text">Notifications</span>
+      </router-link>
+      <router-link to="/messages" class="mobile">
+        <IconMessageFill v-if="$route.name === 'Messages'" />
+        <IconMessage v-else />
+        <span class="header-text">Messages</span>
+      </router-link>
+      <router-link to="/bookmarks">
+        <IconBookmarkFill v-if="$route.name === 'Bookmarks'" />
+        <IconBookmark v-else />
+        <span class="header-text">Bookmarks</span>
+      </router-link>
+      <router-link to="/lists">
+        <IconListsFill v-if="$route.name === 'Lists'" />
+        <IconLists v-else />
+        <span class="header-text">Lists</span>
+      </router-link>
+      <router-link to="/profile">
+        <IconProfileFill v-if="$route.name === 'Profile'" />
+        <IconProfile v-else />
+        <span class="header-text">Profile</span>
+      </router-link>
+      <!-- POPUP -->
+      <router-link to="/more">
+        <IconMore />
+        <span class="header-text">More</span>
+      </router-link>
+    </nav>
   </header>
 </template>
 
@@ -70,7 +68,7 @@ import IconProfileFill from '@/icons/menu/profile-fill.svg'
 import IconMore from '@/icons/menu/more.svg'
 import IconTwitter from '@/icons/menu/twitter.svg'
 import IconSearch from '@/icons/common/search.svg'
-import Container from './Container.vue'
+// import Container from './Container.vue'
 
 export default {
   name: 'MainHeader',
@@ -91,31 +89,34 @@ export default {
     IconProfile,
     IconProfileFill,
     IconMore,
-    IconTwitter,
-    Container
+    IconTwitter
   }
 }
 </script>
 
 <style lang="postcss" scoped>
 .header {
-  display: grid;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
   border: none;
+
+  width: 100px;
   @media (--d) {
-    width: 25%;
+    width: 250px;
   }
   @media (--t) {
-    width: 10%;
-
+    position: relative;
+    padding: 30px;
     border-right: 1px solid #2f3336;
   }
 }
-.header-inner {
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 .navigation {
+
   z-index: 90;
   position: fixed;
   left: 0;
@@ -123,9 +124,12 @@ export default {
   bottom: 0;
   height: 100px;
   display: flex;
+  margin-left: auto;
   align-items: center;
   justify-content: space-around;
   border-top: 1px solid #2f3336;
+  background-color: #fff;
+
 
   .header-text {
     display: none;
@@ -155,7 +159,7 @@ export default {
     align-items: center;
 
     a {
-      display: block;
+      display: flex;
       margin-bottom: 15px;
     }
     a svg {
@@ -163,9 +167,7 @@ export default {
       justify-content: center;
       vertical-align: sub;
     }
-    .header-text {
-      display: none;
-    }
+
   }
 
   @media (--d) {
@@ -177,19 +179,19 @@ export default {
     align-items: flex-start;
 
     a {
-      display: block;
+      display: flex;
 
       margin-bottom: 15px;
     }
     a svg {
-      display: inline-block;
+      display: flex;
       vertical-align: sub;
     }
     span {
       display: block;
     }
     .header-text {
-      display: inline-block;
+      display: flex;
       align-items: center;
       padding-left: 5px;
     }
@@ -197,10 +199,10 @@ export default {
       display: none;
     }
     .mobile {
-      display: block;
+      display: flex;
     }
     .desktop-explore {
-      display: inline-block;
+      display: flex;
     }
   }
 }
