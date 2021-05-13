@@ -13,7 +13,8 @@
           v-if="$route.name === 'Explore'"
         />
         <IconExplore class="desktop-explore" v-else />
-        <IconSearch class="mobile-explore" />
+        <IconSearch-Fill class="mobile-explore" v-if="$route.name === 'Explore'"/>
+        <IconSearch class="mobile-explore" v-else/>
         <span class="header-text">Explore</span>
       </router-link>
       <router-link to="/notifications" class="mobile">
@@ -68,11 +69,13 @@ import IconProfileFill from '@/icons/menu/profile-fill.svg'
 import IconMore from '@/icons/menu/more.svg'
 import IconTwitter from '@/icons/menu/twitter.svg'
 import IconSearch from '@/icons/common/search.svg'
+import IconSearchFill from '@/icons/common/search-fill.svg'
 // import Container from './Container.vue'
 
 export default {
   name: 'MainHeader',
   components: {
+    IconSearchFill,
     IconSearch,
     IconHome,
     IconHomeFill,
