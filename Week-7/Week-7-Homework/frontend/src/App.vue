@@ -24,11 +24,18 @@ export default {
 #app {
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 .main {
   display: flex;
   padding: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 100px;
+  overflow: overlay;
+  @media (--t) {
+    margin-bottom: 0px;
+  }
+}
+
+.container {
 }
 </style>

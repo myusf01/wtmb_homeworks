@@ -9,7 +9,9 @@ module.exports = {
         {
           customMedia: { '--d': '(min-width: 1270px)' }
         }
-      ]
+      ],
+      "postcss-import": {},
+      "autoprefixer": {}
     }
   }
 }

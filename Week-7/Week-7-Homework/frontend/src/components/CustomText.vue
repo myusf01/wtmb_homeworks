@@ -15,14 +15,15 @@ export default {
       type: String,
       default: 'normal', // normal:15, large:20, small:13
       validator: function(value) {
-        return ['normal', 'large', 'small'].indexOf(value) !== -1
+        return ['normal', 'large', 'small','bold'].indexOf(value) !== -1
       }
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
+
 .normal {
 }
 .small {
@@ -30,5 +31,8 @@ export default {
 }
 .large {
   font-size: 20px;
+}
+.bold{
+  font-weight: 700;
 }
 </style>

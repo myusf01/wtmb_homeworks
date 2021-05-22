@@ -3,36 +3,82 @@
     <div class="timeline">
       <CustomText class="a1">Hele Hele Dünya</CustomText>
       <CustomText class="a1"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quam
-        error, minus temporibus doloribus, explicabo recusandae deleniti natus,
-        magnam officiis ipsam amet rerum voluptate at architecto repellendus ut.
-        A, placeat.</CustomText
-      >
-
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quam
-        error, minus temporibus doloribus, explicabo recusandae deleniti natus,
-        magnam officiis ipsam amet rerum voluptate at architecto repellendus ut.
-        A, placeat.</CustomText
-      >
-
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quam
-        error, minus temporibus doloribus, explicabo recusandae deleniti natus,
-        magnam officiis ipsam amet rerum voluptate at architecto repellendus ut.
-        A, placeat.</CustomText
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
       >
       <CustomText class="a1"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quam
-        error, minus temporibus doloribus, explicabo recusandae deleniti natus,
-        magnam officiis ipsam amet rerum voluptate at architecto repellendus ut.
-        A, placeat.</CustomText
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
       >
       <CustomText class="a1"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quam
-        error, minus temporibus doloribus, explicabo recusandae deleniti natus,
-        magnam officiis ipsam amet rerum voluptate at architecto repellendus ut.
-        A, placeat.</CustomText
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
       >
     </div>
     <div class="widgets">
@@ -68,7 +114,6 @@ export default {
   grid-template-columns: 1fr;
 
   @media (--t) {
-    
     display: grid;
     grid-template-columns: 1fr 350px;
     grid-gap: 30px;
@@ -76,6 +121,7 @@ export default {
 }
 .timeline {
   max-width: 600px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,53 +1,94 @@
 <template>
   <header class="header">
-    <nav class="navigation">
-      <router-link to="/"> <IconTwitter /></router-link>
-      <router-link to="/" class="mobile">
-        <IconHomeFill v-if="$route.name === 'Home'" />
-        <IconHome v-else />
-        <span class="header-text">Home</span>
-      </router-link>
-      <router-link to="/explore" class="mobile">
-        <IconExploreFill
-          class="desktop-explore"
-          v-if="$route.name === 'Explore'"
-        />
-        <IconExplore class="desktop-explore" v-else />
-        <IconSearch-Fill class="mobile-explore" v-if="$route.name === 'Explore'"/>
-        <IconSearch class="mobile-explore" v-else/>
-        <span class="header-text">Explore</span>
-      </router-link>
-      <router-link to="/notifications" class="mobile">
-        <IconNotificationFill v-if="$route.name === 'Notifications'" />
-        <IconNotification v-else />
-        <span class="header-text">Notifications</span>
-      </router-link>
-      <router-link to="/messages" class="mobile">
-        <IconMessageFill v-if="$route.name === 'Messages'" />
-        <IconMessage v-else />
-        <span class="header-text">Messages</span>
-      </router-link>
-      <router-link to="/bookmarks">
-        <IconBookmarkFill v-if="$route.name === 'Bookmarks'" />
-        <IconBookmark v-else />
-        <span class="header-text">Bookmarks</span>
-      </router-link>
-      <router-link to="/lists">
-        <IconListsFill v-if="$route.name === 'Lists'" />
-        <IconLists v-else />
-        <span class="header-text">Lists</span>
-      </router-link>
-      <router-link to="/profile">
-        <IconProfileFill v-if="$route.name === 'Profile'" />
-        <IconProfile v-else />
-        <span class="header-text">Profile</span>
-      </router-link>
-      <!-- POPUP -->
-      <router-link to="/more">
-        <IconMore />
-        <span class="header-text">More</span>
-      </router-link>
-    </nav>
+    <div class="menu">
+      <nav class="navigation">
+        <router-link to="/"
+          ><div class="itemContainer">
+            <span class="icon"><IconTwitter class="twitter-icon"/></span></div
+        ></router-link>
+
+        <router-link to="/" class="mobile">
+          <div class="itemContainer">
+            <span class="icon">
+              <IconHomeFill v-if="$route.name === 'Home'" /> <IconHome v-else />
+            </span>
+            <CustomText class="large bold header-text">Home</CustomText>
+          </div>
+        </router-link>
+        <router-link to="/explore" class="mobile">
+          <div class="itemContainer">
+            <span class="icon">
+              <IconExploreFill
+                class="desktop-explore"
+                v-if="$route.name === 'Explore'"
+              />
+              <IconExplore class="desktop-explore" v-else />
+              <IconSearch-Fill
+                class="mobile-explore"
+                v-if="$route.name === 'Explore'"
+              />
+              <IconSearch class="mobile-explore" v-else />
+            </span>
+            <CustomText class="large bold header-text">Explore</CustomText>
+          </div>
+        </router-link>
+        <router-link to="/notifications" class="mobile">
+          <div class="itemContainer">
+            <span class="icon">
+              <IconNotificationFill v-if="$route.name === 'Notifications'" />
+              <IconNotification v-else />
+            </span>
+            <CustomText class="large bold header-text"
+              >Notifications</CustomText
+            >
+          </div>
+        </router-link>
+        <router-link to="/messages" class="mobile">
+          <div class="itemContainer">
+            <span class="icon">
+              <IconMessageFill v-if="$route.name === 'Messages'" />
+              <IconMessage v-else />
+            </span>
+            <CustomText class="large bold header-text">Messages</CustomText>
+          </div>
+        </router-link>
+        <router-link to="/bookmarks">
+          <div class="itemContainer">
+            <span class="icon">
+              <IconBookmarkFill v-if="$route.name === 'Bookmarks'" />
+              <IconBookmark v-else />
+            </span>
+            <CustomText class="large bold header-text">Bookmarks</CustomText>
+          </div>
+        </router-link>
+        <router-link to="/lists">
+          <div class="itemContainer">
+            <span class="icon">
+              <IconListsFill v-if="$route.name === 'Lists'" />
+              <IconLists v-else />
+            </span>
+            <CustomText class="large bold header-text">Lists</CustomText>
+          </div>
+        </router-link>
+        <router-link to="/profile">
+          <div class="itemContainer">
+            <span class="icon">
+              <IconProfileFill v-if="$route.name === 'Profile'" />
+              <IconProfile v-else />
+            </span>
+            <CustomText class="large bold header-text">Profile</CustomText>
+          </div>
+        </router-link>
+        <!-- POPUP -->
+        <router-link to="/more">
+          <div class="itemContainer">
+            <span class="icon"><IconMore /></span>
+            <CustomText class="large bold header-text">More</CustomText>
+          </div>
+        </router-link>
+      </nav>
+      <accountInfo to="/profile"></accountInfo>
+    </div>
   </header>
 </template>
 
@@ -70,11 +111,17 @@ import IconMore from '@/icons/menu/more.svg'
 import IconTwitter from '@/icons/menu/twitter.svg'
 import IconSearch from '@/icons/common/search.svg'
 import IconSearchFill from '@/icons/common/search-fill.svg'
+
+import accountInfo from './account-info.vue'
+import CustomText from './CustomText.vue'
+
 // import Container from './Container.vue'
 
 export default {
   name: 'MainHeader',
   components: {
+    CustomText,
+    accountInfo,
     IconSearchFill,
     IconSearch,
     IconHome,
@@ -101,25 +148,39 @@ export default {
 .header {
   position: fixed;
   height: 100%;
+  min-height: 500px;
   left: 0;
   right: 0;
   bottom: 0;
   display: flex;
+  flex-direction: column;
   border: none;
-
   width: 100px;
+
   @media (--d) {
-    width: 250px;
+    
+    min-width: 275px;
+
   }
   @media (--t) {
-    position: relative;
-    padding: 30px;
     border-right: 1px solid #2f3336;
+    position: relative;
+
+
   }
 }
+.menu {
+z-index: 99;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 68px;
+  height: 100%;
+
+}
 .navigation {
-
   z-index: 90;
   position: fixed;
   left: 0;
@@ -131,18 +192,24 @@ export default {
   align-items: center;
   justify-content: space-around;
   border-top: 1px solid #2f3336;
-  background-color: #fff;
 
-
+  a {
+    display: none;
+  }
+  svg {
+    width: 27px;
+    height: 27px;
+  }
+  svg.twitter-icon {
+    width: 30px;
+    height: 30px;
+  }
   .header-text {
     display: none;
   }
 
   .mobile {
     display: inline-block;
-  }
-  a {
-    display: none;
   }
   .mobile-explore {
     display: inline-block;
@@ -152,7 +219,7 @@ export default {
   }
 
   @media (--t) {
-    padding: 0 12px 0 12px;
+    padding: 0 12px;
 
     border: 0;
     height: auto;
@@ -163,19 +230,19 @@ export default {
 
     a {
       display: flex;
-      margin-bottom: 15px;
+      padding: 4px 0;
     }
     a svg {
       display: flex;
       justify-content: center;
       vertical-align: sub;
     }
-
   }
 
   @media (--d) {
     border: 0;
-    height: auto;
+    height: 100%;
+    width: 275px;
     position: static;
     flex-direction: column;
     justify-content: flex-start;
@@ -183,20 +250,22 @@ export default {
 
     a {
       display: flex;
-
-      margin-bottom: 15px;
+      width: 251px;
     }
+
     a svg {
       display: flex;
-      vertical-align: sub;
+      justify-content: center;
     }
     span {
       display: block;
     }
+
     .header-text {
       display: flex;
       align-items: center;
-      padding-left: 5px;
+      margin-left: 20px;
+      margin-right: auto;
     }
     .mobile-explore {
       display: none;
@@ -209,4 +278,15 @@ export default {
     }
   }
 }
+.itemContainer {
+  display: flex;
+  padding: 12px;
+}
+.account {
+  z-index: 99;
+  margin-bottom: 12px;
+
+}
 </style>
+
+// TODO: // Try to show-hide mobile icons with vue-if tags.
