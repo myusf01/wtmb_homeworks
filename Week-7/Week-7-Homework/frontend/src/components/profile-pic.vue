@@ -25,8 +25,7 @@ export default {
 
 <style lang="postcss" scoped>
 .profile-pic {
-
-display: inline-flex;
+  display: inline-flex;
   img {
     border-radius: 999px;
   }
