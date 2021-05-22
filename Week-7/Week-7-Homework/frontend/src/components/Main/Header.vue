@@ -86,8 +86,9 @@
             <CustomText class="large bold header-text">More</CustomText>
           </div>
         </router-link>
+        <router-link to="/profile"> <account-info/></router-link>
+      <!-- <accountInfo to="/profile"></accountInfo> -->
       </nav>
-      <accountInfo to="/profile"></accountInfo>
     </div>
   </header>
 </template>
@@ -112,8 +113,8 @@ import IconTwitter from '@/icons/menu/twitter.svg'
 import IconSearch from '@/icons/common/search.svg'
 import IconSearchFill from '@/icons/common/search-fill.svg'
 
-import accountInfo from './account-info.vue'
-import CustomText from './CustomText.vue'
+import accountInfo from '../AccountInfo.vue'
+import CustomText from '../CustomText.vue'
 
 // import Container from './Container.vue'
 
@@ -158,19 +159,15 @@ export default {
   width: 100px;
 
   @media (--d) {
-    
     min-width: 275px;
-
   }
   @media (--t) {
     border-right: 1px solid #2f3336;
     position: relative;
-
-
   }
 }
 .menu {
-z-index: 99;
+  z-index: 99;
 
   display: flex;
   flex-direction: row;
@@ -178,7 +175,6 @@ z-index: 99;
   width: 100%;
   min-width: 68px;
   height: 100%;
-
 }
 .navigation {
   z-index: 90;
@@ -285,7 +281,6 @@ z-index: 99;
 .account {
   z-index: 99;
   margin-bottom: 12px;
-
 }
 </style>
 

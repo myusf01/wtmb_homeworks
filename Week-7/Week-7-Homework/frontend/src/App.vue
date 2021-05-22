@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MasterHeader from '@/components/Header'
+import MasterHeader from '@/components/Main/Header'
 import Container from '@/components/Container'
 export default {
   name: 'App',
@@ -28,14 +28,16 @@ export default {
 }
 .main {
   display: flex;
-  padding: 40px;
   margin-bottom: 100px;
   overflow: overlay;
   @media (--t) {
+    height: 100%;
     margin-bottom: 0px;
   }
 }
 
 .container {
+  height: 100%;
+  width: 100%;
 }
 </style>
