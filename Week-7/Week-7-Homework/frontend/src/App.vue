@@ -4,6 +4,7 @@
     <main class="main">
       <Container>
         <router-view />
+        
       </Container>
     </main>
   </div>
@@ -26,6 +27,7 @@ export default {
   justify-content: center;
   height: 100%;
 }
+
 .main {
   display: flex;
   margin-bottom: 100px;
@@ -39,5 +41,9 @@ export default {
 .container {
   height: 100%;
   width: 100%;
+  margin-right: 0px;
+  @media (--t) {
+    margin-right: 100px;
+  }
 }
 </style>

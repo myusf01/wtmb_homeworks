@@ -147,6 +147,7 @@ export default {
 
 <style lang="postcss" scoped>
 .header {
+  z-index: 99;
   position: fixed;
   height: 100%;
   min-height: 500px;

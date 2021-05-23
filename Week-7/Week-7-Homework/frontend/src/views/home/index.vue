@@ -1,26 +1,20 @@
 <template>
   <div class="home">
     <home-timeline-vue/>
-    <div class="widgets">
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eaque
-        adipisci doloribus culpa quasi vero perspiciatis a est dolorem
-        temporibus rem omnis repellat neque optio aut, architecto esse iure
-        minus.</CustomText
-      >
-    </div>
+    <Widgets/>
   </div>
 </template>
 
 <script>
-import CustomText from '@/components/CustomText'
 import homeTimelineVue from '@/components/Home/Timeline.vue'
+import Widgets from '@/components/Main/Widgets.vue'
 export default {
   name: 'Home',
   components: {
     homeTimelineVue,
+    Widgets
 
-    CustomText
+    
   }
 }
 </script>
@@ -42,13 +36,5 @@ export default {
   }
 }
 
-.widgets {
-  display: none;
-  @media (--t) {
-    display: flex;
-  }
-}
-CustomText {
-  display: inline-block;
-}
+
 </style>

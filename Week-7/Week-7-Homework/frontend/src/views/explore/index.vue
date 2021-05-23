@@ -1,16 +1,24 @@
 <template>
   <div class="Explore">
-    <CustomText tag="h1">Hele Hele Explore</CustomText>
+  <Page PageName="explore" ContentName="Hele Hele Explore">
+
+
+  </Page>
+    <Widgets/>
   </div>
 </template>
 
 <script>
-import CustomText from '@/components/CustomText'
+// import CustomText from '@/components/CustomText'
+import Widgets from '@/components/Main/Widgets.vue'
+import Page from '@/components/Main/Page.vue'
+
 
 export default {
   name: 'Explore',
   components: {
-    CustomText
+    Page,
+    Widgets
   }
 }
 </script>
