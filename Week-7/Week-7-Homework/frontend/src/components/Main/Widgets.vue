@@ -25,7 +25,7 @@ export default {
   @media (--t) {
     display: flex;
     width: 350px;
-    padding-right: 15px;
+    padding-right: 1px;
   }
 }
 CustomText {

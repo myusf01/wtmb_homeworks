@@ -1,5 +1,5 @@
 <template>
-  <div class="Profile">
+  <MainPage PageName="Profile" ContentName="Hele Hele Profile">
     <CustomText tag="h1">Hele Hele Profile</CustomText>
 
     <nav id="nav">
@@ -10,18 +10,20 @@
     </nav>
 
     <router-view />
-  </div>
+  </MainPage>
 </template>
 
 <script>
 import CustomText from '@/components/CustomText'
-
+import MainPage from '@/components/Main/MainPage.vue'
 export default {
   name: 'Profile',
   components: {
+    MainPage,
+
     CustomText
   }
 }
 </script>
 
-<style></style>
+<style lang="postcss" scoped></style>

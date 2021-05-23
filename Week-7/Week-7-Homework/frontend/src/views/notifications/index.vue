@@ -1,18 +1,20 @@
 <template>
-  <div class="Notifications">
+  <MainPage PageName="notifications" ContentName="Hele Hele Notifications">
     <CustomText tag="h1">Hele Hele Notifications</CustomText>
-  </div>
+  </MainPage>
 </template>
 
 <script>
 import CustomText from '@/components/CustomText'
-
+import MainPage from '@/components/Main/MainPage.vue'
 export default {
   name: 'Notifications',
   components: {
+    MainPage,
+
     CustomText
   }
 }
 </script>
 
-<style></style>
+<style lang="postcss" scoped></style>

@@ -27,8 +27,7 @@ export default {
 }
 </script>
 <style lang="postcss" scoped>
-
-.PageHead {
+/* .PageHead {
   z-index: 100;
   width: 100%;
   display: flex;
@@ -50,6 +49,27 @@ export default {
   height: 55px;
   border-bottom: 1px solid #2f3336;
   background-color: #fff;
+} */
+
+.PageHead {
+  top: 0;
+  width: 100%;
+  display: flex;
+  position: sticky;
+  height: 55px;
+  background-color: #fff;
+  border-bottom: 1px solid #2f3336;
+}
+
+.PageTitle {
+  width: 100%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .icon {
   display: flex;

@@ -1,8 +1,9 @@
 <template>
   <div id="page" :class="PageName">
     <PageTitleVue :HeaderTitle="ContentName" />
-
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
   </div>
 </template>
 
@@ -27,12 +28,13 @@ export default {
 </script>
 <style lang="postcss" scoped>
 #page {
+  align-items: flex-start;
+
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
 
   @media (--t) {
     min-width: 550px;
@@ -40,5 +42,10 @@ export default {
 
     border-right: 1px solid #2f3336;
   }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
 }
 </style>
