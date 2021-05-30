@@ -86,8 +86,8 @@
             <CustomText class="large bold header-text">More</CustomText>
           </div>
         </router-link>
-        <router-link to="/profile"> <account-info/></router-link>
-      <!-- <accountInfo to="/profile"></accountInfo> -->
+        <router-link to="/profile"> <account-info /></router-link>
+        <!-- <accountInfo to="/profile"></accountInfo> -->
       </nav>
     </div>
   </header>
@@ -161,6 +161,7 @@ export default {
 
   @media (--d) {
     min-width: 275px;
+    margin-left: auto;
   }
   @media (--t) {
     border-right: 1px solid #2f3336;

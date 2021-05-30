@@ -29,7 +29,6 @@ export default {
 }
 
 .main {
-  width: 100%;
   display: flex;
   margin-bottom: 100px;
   overflow: overlay;
