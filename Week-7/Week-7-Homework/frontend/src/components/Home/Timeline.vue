@@ -14,158 +14,133 @@
         consequuntur harum laudantium. Mollitia.</CustomText
       ></Tweet
     >
-    <CustomText class="a1">Hele Hele Dünya</CustomText>
-
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
+    <Tweet>
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      >
+      <CustomText class="a1"
+        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
+        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
+        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
+        consequuntur harum laudantium. Mollitia.</CustomText
+      ></Tweet
     >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
-    <CustomText class="a1"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-      et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-      delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-      consequuntur harum laudantium. Mollitia.</CustomText
-    >
+    
   </MainPage>
 </template>
 
