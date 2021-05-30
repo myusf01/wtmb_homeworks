@@ -31,13 +31,13 @@ export default {
     align-items: flex-end;
     flex-direction: column;
     margin-left: auto;
-    width: 19px;
-    height: 19px;
+    width: 23px;
+    height: 23px;
   }
 }
 .account {
   bottom: 0;
-  padding: 0 12px;
+  /* padding: 0 12px; */
   height: 60px;
   display: flex;
   flex-direction: row;
@@ -65,7 +65,5 @@ export default {
 span {
   display: inline-block;
 }
-svg {
-  margin-left: auto;
-}
+
 </style>

@@ -80,7 +80,7 @@
           </div>
         </router-link>
         <!-- POPUP -->
-        <router-link to="/more">
+        <router-link>
           <div class="itemContainer">
             <span class="icon"><IconMore /></span>
             <CustomText class="large bold header-text">More</CustomText>
@@ -164,7 +164,7 @@ export default {
     margin-left: auto;
   }
   @media (--t) {
-    border-right: 1px solid #2f3336;
+    border-right: 1px solid var(--c-border-color);
     position: relative;
   }
 }
@@ -189,7 +189,7 @@ export default {
   margin-left: auto;
   align-items: center;
   justify-content: space-around;
-  border-top: 1px solid #2f3336;
+  border-top: 1px solid var(--c-border-color);
 
   a {
     display: none;
@@ -287,3 +287,4 @@ export default {
 </style>
 
 // TODO: // Try to show-hide mobile icons with vue-if tags.
+// TODO: // Add notification dot and counter.

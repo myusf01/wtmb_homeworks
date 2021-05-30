@@ -2,7 +2,7 @@
   <div class="PageHead">
     <div class="PageTitle">
       <div class="title-text">
-        <CustomText class="bold large">{{ HeaderTitle }}</CustomText>
+        <CustomText is="h1" class="bold large">{{ HeaderTitle }}</CustomText>
       </div>
 
       <span class="icon"><IconStar /></span>
@@ -27,30 +27,6 @@ export default {
 }
 </script>
 <style lang="postcss" scoped>
-/* .PageHead {
-  z-index: 100;
-  width: 100%;
-  display: flex;
-  position: fixed;
-  @media (--t) {
-    width: 599px;
-    min-width: 550px;
-  }
-}
-.PageTitle {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 55px;
-  border-bottom: 1px solid #2f3336;
-  background-color: #fff;
-} */
-
 .PageHead {
   top: 0;
   width: 100%;
@@ -58,12 +34,12 @@ export default {
   position: sticky;
   height: 55px;
   background-color: #fff;
-  border-bottom: 1px solid #2f3336;
+  border-bottom: 1px solid var(--c-border-color);
 }
 
 .PageTitle {
   width: 100%;
-  
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;

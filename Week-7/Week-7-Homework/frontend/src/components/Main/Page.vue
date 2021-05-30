@@ -39,7 +39,7 @@ export default {
     min-width: 550px;
     max-width: 600px;
 
-    border-right: 1px solid #2f3336;
+    border-right: 1px solid var(--c-border-color);
   }
 }
 
