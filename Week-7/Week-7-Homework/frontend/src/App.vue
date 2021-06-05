@@ -4,7 +4,6 @@
     <main class="main">
       <Container>
         <router-view />
-
       </Container>
     </main>
   </div>
@@ -26,18 +25,18 @@ export default {
   display: flex;
   justify-content: center;
   height: 100%;
+
 }
 
 .main {
   display: flex;
   margin-bottom: 100px;
-  overflow: overlay;
-  width: 100%;
+  overflow-x: overlay;
+  /* width: 100%; */
+
   @media (--t) {
-    width: auto;
     height: 100%;
     margin-bottom: 0px;
   }
 }
-
 </style>

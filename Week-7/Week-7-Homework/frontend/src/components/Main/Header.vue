@@ -161,7 +161,7 @@ export default {
 
   @media (--d) {
     min-width: 275px;
-    margin-left: auto;
+    /* margin-left: auto; */
   }
   @media (--t) {
     border-right: 1px solid var(--c-border-color);

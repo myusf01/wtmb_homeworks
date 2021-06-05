@@ -33,12 +33,9 @@ export default {
   grid-template-columns: 1fr;
   height: 100%;
   @media (--t) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-right: auto;
+    grid-template-columns: 1fr 370px;
 
     grid-gap: 30px;
-    width: 100%;
   }
 }
 </style>
