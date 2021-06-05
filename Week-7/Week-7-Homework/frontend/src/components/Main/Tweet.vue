@@ -18,6 +18,7 @@
           <slot />
         </div>
         <div class="tweetFooter">
+          <IconReply />
           <div class="icon" @click="iconClicked = !iconClicked">
             <IconRetweet v-show="!iconClicked" />
             <IconRetweeted v-show="iconClicked" />
@@ -27,7 +28,6 @@
             <IconLiked v-show="!iconClicked" />
             <IconUnliked v-show="iconClicked" />
           </div>
-          <IconReply />
           <IconShare />
         </div>
       </div>
@@ -102,7 +102,7 @@ svg {
 }
 .tweetFooter {
   margin-top: 12px;
-  
+
   @media (--t) {
   max-width: 425px;
     
