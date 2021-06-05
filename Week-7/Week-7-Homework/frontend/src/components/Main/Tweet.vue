@@ -9,13 +9,27 @@
           <div class="authorInfo">
             <CustomText class="name bold">Muhammed Yusuf</CustomText>
             <CustomText class="slug">@myusf_0</CustomText>
-            <CustomText>.</CustomText>
+            <CustomText>·</CustomText>
             <CustomText class="time">35m</CustomText>
           </div>
           <IconMoreOpt class="more-icon" />
         </div>
-        <slot />
-        <div class="tweetContent"></div>
+        <div class="tweetContent">
+          <slot />
+        </div>
+        <div class="tweetFooter">
+          <div class="icon" @click="iconClicked = !iconClicked">
+            <IconRetweet v-show="!iconClicked" />
+            <IconRetweeted v-show="iconClicked" />
+          </div>
+
+          <div class="icon" @click="iconClicked = !iconClicked">
+            <IconLiked v-show="!iconClicked" />
+            <IconUnliked v-show="iconClicked" />
+          </div>
+          <IconReply />
+          <IconShare />
+        </div>
       </div>
     </article>
   </div>
@@ -25,14 +39,31 @@
 import CustomText from '../CustomText.vue'
 import ProfilePhoto from '../ProfilePhoto.vue'
 import IconMoreOpt from '@/icons/common/more-opt.svg'
+import IconRetweet from '@/icons/tweet/retweet.svg'
+import IconRetweeted from '@/icons/tweet/retweeted.svg'
+import IconUnliked from '@/icons/tweet/unliked.svg'
+import IconLiked from '@/icons/tweet/liked.svg'
+import IconReply from '@/icons/tweet/reply.svg'
+import IconShare from '@/icons/tweet/share.svg'
 
 export default {
   name: 'MainTweet',
   components: {
+    IconRetweet,
+    IconRetweeted,
+    IconUnliked,
+    IconLiked,
+    IconReply,
+    IconShare,
     IconMoreOpt,
     CustomText,
 
     ProfilePhoto
+  },
+  data: function() {
+    return {
+      iconClicked: false
+    }
   }
 }
 </script>
@@ -45,23 +76,41 @@ article {
 span ~ span {
   margin-left: 4px;
 }
-
+svg {
+  width: 19px;
+  height: 19px;
+}
 .tweet {
   display: flex;
   flex-direction: column;
   padding: 12px 0;
   width: 100%;
-  max-width: 599px;
   height: auto;
   border-bottom: 1px solid var(--c-border-color);
+  @media (--t) {
+    max-width: 599px;
+  }
 }
 .photo {
   margin-right: 12px;
 }
-.tweetHeader {
+.tweetHeader,
+.tweetFooter {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.tweetFooter {
+  margin-top: 12px;
+  
+  @media (--t) {
+  max-width: 425px;
+    
+  }
+}
+
+.tweetContent {
+  margin-top: 5px;
 }
 .authorInfo {
   display: flex;

@@ -1,12 +1,10 @@
 <template>
   <div class="contentContainer">
-    <Page :PageName="PageName" :ContentName="ContentName"> 
-
-
-    <slot />
+    <Page :PageName="PageName" :ContentName="ContentName">
+      <slot />
     </Page>
 
-    <widgets/>
+    <widgets />
   </div>
 </template>
 
@@ -31,14 +29,16 @@ export default {
 </script>
 <style lang="postcss" scoped>
 .contentContainer {
-  margin-right: auto;
   display: grid;
   grid-template-columns: 1fr;
   height: 100%;
   @media (--t) {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-right: auto;
+
     grid-gap: 30px;
+    width: 100%;
   }
 }
 </style>

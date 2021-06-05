@@ -32,18 +32,12 @@ export default {
   display: flex;
   margin-bottom: 100px;
   overflow: overlay;
+  width: 100%;
   @media (--t) {
+    width: auto;
     height: 100%;
     margin-bottom: 0px;
   }
 }
 
-.container {
-  height: 100%;
-  width: 100%;
-  margin-right: 0px;
-  @media (--t) {
-    margin-right: 100px;
-  }
-}
 </style>
