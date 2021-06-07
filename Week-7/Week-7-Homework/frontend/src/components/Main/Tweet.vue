@@ -94,6 +94,12 @@ svg {
 .photo {
   margin-right: 12px;
 }
+.tweetContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
 .tweetHeader,
 .tweetFooter {
   display: flex;
@@ -104,8 +110,7 @@ svg {
   margin-top: 12px;
 
   @media (--t) {
-  max-width: 425px;
-    
+    max-width: 425px;
   }
 }
 
