@@ -1,7 +1,9 @@
 <template>
   <div id="page" :class="PageName">
     <PageTitleVue :HeaderTitle="ContentName" />
+
     <div class="content">
+      <TweetComposer/>
       <slot />
     </div>
   </div>
@@ -9,7 +11,7 @@
 
 <script>
 import PageTitleVue from './PageTitle.vue'
-
+import TweetComposer from './TweetComposer.vue'
 export default {
   name: 'Page',
   props: {
@@ -22,6 +24,8 @@ export default {
     }
   },
   components: {
+    TweetComposer,
+
     PageTitleVue
   }
 }
@@ -43,7 +47,7 @@ export default {
   }
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
   width: 100%;
