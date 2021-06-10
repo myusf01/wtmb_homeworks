@@ -7,15 +7,15 @@
       <div class="tweetContainer">
         <div class="tweetHeader">
           <div class="authorInfo">
-            <CustomText class="name bold">Muhammed Yusuf</CustomText>
-            <CustomText class="slug">@myusf_0</CustomText>
+            <CustomText class="name bold">{{tweet.user.name}}</CustomText>
+            <CustomText class="slug">@{{tweet.user.username}}</CustomText>
             <CustomText>·</CustomText>
             <CustomText class="time">35m</CustomText>
           </div>
           <IconMoreOpt class="more-icon" />
         </div>
         <div class="tweetContent">
-          <slot />
+          <CustomText>{{tweet.text}}</CustomText>
         </div>
         <div class="tweetFooter">
           <IconReply />
@@ -60,6 +60,7 @@ export default {
 
     ProfilePhoto
   },
+  props: ['tweet'],
   data: function() {
     return {
       iconClicked: false

@@ -1,160 +1,28 @@
 <template>
   <MainPage PageName="timeline" ContentName="Hele Hele Dünya">
-    <Tweet>
-      <CustomText class="a1"
-        >{{counter}}</CustomText
-      >
-      </Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
-    <Tweet>
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      >
-      <CustomText class="a1"
-        >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur
-        et, dolores recusandae eius cumque quaerat. Natus repellat repudiandae,
-        delectus pariatur, voluptate, dolorum adipisci recusandae illo accusamus
-        consequuntur harum laudantium. Mollitia.</CustomText
-      ></Tweet
-    >
+    <Tweet v-for="tweet in tweets" :key="tweet.text" :tweet="tweet"> </Tweet>
   </MainPage>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import CustomText from '../CustomText.vue'
+import { mapState, mapActions } from 'vuex'
 import MainPage from '../Main/MainPage.vue'
 import Tweet from '../Main/Tweet.vue'
 
 export default {
   name: 'timeline',
   components: {
-
     Tweet,
-    MainPage,
-
-    CustomText
+    MainPage
   },
   computed: {
-    ...mapState({
-      counter:(state) => state.counter
-    })
-
+    ...mapState(['tweets'])
+  },
+  methods: {
+    ...mapActions(['fetchTweets'])
+  },
+  created() {
+    this.fetchTweets()
   }
 }
 </script>
