@@ -3,35 +3,67 @@
     <ProfilePhoto class="photo" :size="48" />
 
     <div class="composeArea">
-      <textarea
-        type="text"
-        id="composeTweetText"
-        name="composeTweetText"
-        placeholder="Neler oluyor hayatta?"
-        rows="1"
-        required
-      />
-      <div class="composeFooter">
-          
-      </div>
+      <form>
+        <div class="textEditor">
+          <textarea
+            type="text"
+            id="composeTweetText"
+            name="composeTweetText"
+            placeholder="Neler oluyor hayatta?"
+            rows="1"
+            required
+          />
+        </div>
+        <div class="composeFooter">
+          <div class="icons">
+            <div class="icon">
+              <IconGallery />
+            </div>
+            <div class="icon">
+              <IconGif />
+            </div>
+            <div class="icon">
+              <IconPoll />
+            </div>
+            <div class="icon">
+              <IconEmoji />
+            </div>
+            <div class="icon">
+              <IconSchedule />
+            </div>
+          </div>
+          <TwButton ButtonText="Tweet" icon="false"></TwButton>
+        </div>
+      </form>
     </div>
   </div>
 </template>
 
 <script>
 import ProfilePhoto from '../ProfilePhoto.vue'
-
+import IconEmoji from '@/icons/editor/emoji.svg'
+import IconGallery from '@/icons/editor/gallery.svg'
+import IconGif from '@/icons/editor/gif.svg'
+import IconPoll from '@/icons/editor/poll.svg'
+import IconSchedule from '@/icons/editor/schedule.svg'
+import TwButton from './TwButton.vue'
 export default {
   name: 'Composer',
 
   components: {
+    TwButton,
+    IconEmoji,
+    IconGallery,
+    IconGif,
+    IconPoll,
+    IconSchedule,
     ProfilePhoto
   }
 }
 </script>
 <style lang="postcss" scoped>
 :focus {
-  outline: .5px solid #969696;
+  outline: 0.5px solid #969696;
 }
 .tweetComposer {
   display: flex;
@@ -53,6 +85,8 @@ export default {
 
 .composeArea {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   padding-top: 4px;
 }
@@ -60,15 +94,35 @@ textarea {
   width: 100%;
   max-width: 460px;
   height: 120px;
-  min-height: 50px;
+  min-height: 120px;
   padding: 12px 10px;
   font-size: 20px;
-  border: 1px solid;
-  border-radius: 20px;
 }
 
 textarea::placeholder {
   color: #afafaf;
 }
 
+.textEditor {
+  display: flex;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--c-border-color);
+}
+.composeFooter {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 12px;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.icon {
+  padding: 0 9px;
+}
 </style>
