@@ -32,10 +32,11 @@ export default {
   display: flex;
   margin-bottom: 100px;
   overflow-x: overlay;
-  /* width: 100%; */
+  width: 100%;
 
   @media (--t) {
     height: 100%;
+    width: auto;
     margin-bottom: 0px;
   }
 }

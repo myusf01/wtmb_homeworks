@@ -32,6 +32,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   height: 100%;
+  width: 100%;
   @media (--t) {
     grid-template-columns: 1fr 370px;
 
