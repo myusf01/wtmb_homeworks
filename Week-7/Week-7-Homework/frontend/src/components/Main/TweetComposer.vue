@@ -97,6 +97,7 @@ textarea {
   min-height: 120px;
   padding: 12px 10px;
   font-size: 20px;
+  resize: none;
 }
 
 textarea::placeholder {
