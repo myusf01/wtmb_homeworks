@@ -1,6 +1,6 @@
 <template>
   <div class="tweetComposer">
-    <ProfilePhoto class="photo" :size="48" />
+    <ProfilePhoto class="photo" :size="48" :src="`https://picsum.photos/50?random=60c1c48763262f1f1c7d8c6e`"/>
 
     <div class="composeArea">
       <form>
