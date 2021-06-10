@@ -2,7 +2,7 @@
   <div class="tweet">
     <article>
       <div class="photo">
-        <ProfilePhoto :size="48" />
+        <ProfilePhoto :size="48" :src="`https://picsum.photos/50?random=${tweet.user._id}`"/>
       </div>
       <div class="tweetContainer">
         <div class="tweetHeader">

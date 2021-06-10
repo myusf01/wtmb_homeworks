@@ -1,6 +1,6 @@
 <template>
   <div class="account">
-    <div class="pic"><ProfilePic :size="40" /></div>
+    <div class="pic"><ProfilePic :size="40" :src="img_src"/></div>
 
     <div class="user-info">
       <CustomText id="name" class="bold">Muhammed Yusuf</CustomText>
@@ -20,6 +20,11 @@ export default {
     ProfilePic,
     CustomText,
     IconMoreOpt
+  },
+  props:{
+    img_src:{
+      type: String
+    }
   }
 }
 </script>

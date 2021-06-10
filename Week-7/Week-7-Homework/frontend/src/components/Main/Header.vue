@@ -86,7 +86,7 @@
             <CustomText class="large bold header-text">More</CustomText>
           </div>
         </router-link>
-        <router-link to="/profile"> <account-info /></router-link>
+        <router-link to="/profile"> <account-info :img_src="`https://picsum.photos/50?random=60c1c48763262f1f1c7d8c6e`"/></router-link>
         <!-- <accountInfo to="/profile"></accountInfo> -->
       </nav>
     </div>
