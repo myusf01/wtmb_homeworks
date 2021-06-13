@@ -1,6 +1,6 @@
 <template>
   <div class="buttonContainer">
-    <button class="adf" type="submit"><CustomText class="buttonText bold">{{ ButtonText }}</CustomText></button>
+    <button class="btn" type="submit"><CustomText class="buttonText bold">{{ ButtonText }}</CustomText></button>
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
 }
 </script>
 <style lang="postcss" scoped>
-.adf {
+.btn {
   border-radius: 999px;
   width: 100px;
   height: 40px;

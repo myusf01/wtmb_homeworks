@@ -3,7 +3,6 @@
     <PageTitleVue :HeaderTitle="ContentName" />
 
     <div class="content">
-      <TweetComposer/>
       <slot />
     </div>
   </div>
@@ -11,7 +10,6 @@
 
 <script>
 import PageTitleVue from './PageTitle.vue'
-import TweetComposer from './TweetComposer.vue'
 export default {
   name: 'Page',
   props: {
@@ -24,7 +22,6 @@ export default {
     }
   },
   components: {
-    TweetComposer,
 
     PageTitleVue
   }
