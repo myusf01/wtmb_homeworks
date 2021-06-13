@@ -1,6 +1,6 @@
 <template>
   <MainPage PageName="timeline" ContentName="Hele Hele Dünya">
-    <Tweet v-for="tweet in tweets" :key="tweet.text" :tweet="tweet"> </Tweet>
+    <Tweet v-for="tweet in tweets" :key="tweet._id" :tweet="tweet"> </Tweet>
   </MainPage>
 </template>
 

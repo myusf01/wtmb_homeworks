@@ -3,12 +3,13 @@
     <ProfilePhoto class="photo" :size="48" :src="`https://picsum.photos/50?random=60c1c48763262f1f1c7d8c6e`"/>
 
     <div class="composeArea">
-      <form>
+      <form @submit.prevent="sendTweet($data)">
         <div class="textEditor">
           <textarea
             type="text"
-            id="composeTweetText"
-            name="composeTweetText"
+            id="tweetText"
+            name="tweetText"
+            v-model="tweetText"
             placeholder="Neler oluyor hayatta?"
             rows="1"
             required
@@ -32,7 +33,7 @@
               <IconSchedule />
             </div>
           </div>
-          <TwButton ButtonText="Tweet" icon="false"></TwButton>
+          <TwButton ButtonText="Tweet" icon=false></TwButton>
         </div>
       </form>
     </div>
@@ -47,6 +48,7 @@ import IconGif from '@/icons/editor/gif.svg'
 import IconPoll from '@/icons/editor/poll.svg'
 import IconSchedule from '@/icons/editor/schedule.svg'
 import TwButton from './TwButton.vue'
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'Composer',
 
@@ -58,6 +60,17 @@ export default {
     IconPoll,
     IconSchedule,
     ProfilePhoto
+  },
+  data: function(){
+    return {
+      tweetText: ''
+    }
+  },
+  computed:{
+    ...mapState(['tweets'])
+  },
+  methods:{
+    ...mapActions(['sendTweet','fetchTweets'])
   }
 }
 </script>

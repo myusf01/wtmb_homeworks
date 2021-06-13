@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     counter: 0,
-    tweets: []
+    tweets: [],
+    tweet2send: ''
   },
   mutations: {
     SET_COUNTER(state, newCount) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     SET_TWEETS(state, data) {
       state.tweets = data
+    },
+    POST_TWEET(state, data) {
+      state.tweet2send = data
     }
   },
   actions: {
@@ -24,7 +28,15 @@ export default new Vuex.Store({
     },
     async fetchTweets({ commit }) {
       const result = await axios.get('http://localhost:3000/tweet/all/json')
-      commit('SET_TWEETS', result.data)
+      commit('SET_TWEETS', result.data.reverse())
+    },
+
+    async sendTweet({ commit }, tweet) {
+      await axios.post('http://localhost:3000/tweet/60c1c48763262f1f1c7d8c6e', {
+        tweet: tweet.tweetText
+      })
+      .then(this.fetchTweets())
+      commit('POST_TWEET', tweet.tweetText)
     }
   },
   modules: {}
